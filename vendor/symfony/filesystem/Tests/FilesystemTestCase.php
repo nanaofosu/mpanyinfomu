@@ -40,7 +40,7 @@ class FilesystemTestCase extends TestCase
      */
     private static $symlinkOnWindows = null;
 
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
         if ('\\' === \DIRECTORY_SEPARATOR) {
             self::$linkOnWindows = true;
@@ -69,7 +69,7 @@ class FilesystemTestCase extends TestCase
         }
     }
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->umask = umask(0);
         $this->filesystem = new Filesystem();
@@ -78,7 +78,7 @@ class FilesystemTestCase extends TestCase
         $this->workspace = realpath($this->workspace);
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         if (!empty($this->longPathNamesWindows)) {
             foreach ($this->longPathNamesWindows as $path) {

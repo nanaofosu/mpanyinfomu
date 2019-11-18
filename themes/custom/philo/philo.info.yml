@@ -1,0 +1,9 @@
+name: Philo
+type: theme
+description: 'Philo is a subtheme of Platon built for Symptoms to Diagnosis.'
+package: Other
+core: 8.x
+libraries:
+  - philo/global-styling
+ 
+base theme: platon
