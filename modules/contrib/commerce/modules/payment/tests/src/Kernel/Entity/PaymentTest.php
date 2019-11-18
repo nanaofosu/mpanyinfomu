@@ -4,12 +4,12 @@ namespace Drupal\Tests\commerce_payment\Kernel\Entity;
 
 use Drupal\commerce_order\Entity\Order;
 use Drupal\commerce_order\Entity\OrderItem;
-use Drupal\commerce_order\Entity\OrderItemType;
 use Drupal\commerce_payment\Entity\PaymentGateway;
 use Drupal\commerce_payment\Entity\Payment;
 use Drupal\commerce_payment\Plugin\Commerce\PaymentType\PaymentDefault;
 use Drupal\commerce_price\Price;
-use Drupal\Tests\commerce\Kernel\CommerceKernelTestBase;
+use Drupal\Tests\commerce_order\Kernel\OrderKernelTestBase;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Tests the payment entity.
@@ -18,7 +18,7 @@ use Drupal\Tests\commerce\Kernel\CommerceKernelTestBase;
  *
  * @group commerce
  */
-class PaymentTest extends CommerceKernelTestBase {
+class PaymentTest extends OrderKernelTestBase {
 
   /**
    * A sample order.
@@ -40,11 +40,6 @@ class PaymentTest extends CommerceKernelTestBase {
    * @var array
    */
   public static $modules = [
-    'entity_reference_revisions',
-    'profile',
-    'state_machine',
-    'commerce_product',
-    'commerce_order',
     'commerce_payment',
     'commerce_payment_example',
   ];
@@ -55,11 +50,7 @@ class PaymentTest extends CommerceKernelTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $this->installEntitySchema('profile');
-    $this->installEntitySchema('commerce_order');
-    $this->installEntitySchema('commerce_order_item');
     $this->installEntitySchema('commerce_payment');
-    $this->installConfig('commerce_order');
     $this->installConfig('commerce_payment');
 
     PaymentGateway::create([
@@ -70,13 +61,6 @@ class PaymentTest extends CommerceKernelTestBase {
 
     $user = $this->createUser();
     $this->user = $this->reloadEntity($user);
-
-    // An order item type that doesn't need a purchasable entity.
-    OrderItemType::create([
-      'id' => 'test',
-      'label' => 'Test',
-      'orderType' => 'default',
-    ])->save();
 
     $order_item = OrderItem::create([
       'title' => 'Membership subscription',
@@ -197,18 +181,23 @@ class PaymentTest extends CommerceKernelTestBase {
       'state' => 'completed',
     ]);
     $payment->save();
-    $this->order = $this->reloadEntity($this->order);
+    $this->order->save();
     $this->assertEquals(new Price('30', 'USD'), $this->order->getTotalPaid());
     $this->assertEquals(new Price('0', 'USD'), $this->order->getBalance());
 
     $payment->setRefundedAmount(new Price('15', 'USD'));
     $payment->setState('partially_refunded');
     $payment->save();
-    $this->order = $this->reloadEntity($this->order);
+    $this->order->save();
     $this->assertEquals(new Price('15', 'USD'), $this->order->getTotalPaid());
     $this->assertEquals(new Price('15', 'USD'), $this->order->getBalance());
 
     $payment->delete();
+    // Confirm that if the order isn't explicitly saved, it will be saved
+    // at the end of the request.
+    $request = $this->container->get('request_stack')->getCurrentRequest();
+    $kernel = $this->container->get('kernel');
+    $kernel->terminate($request, new Response());
     $this->order = $this->reloadEntity($this->order);
     $this->assertEquals(new Price('0', 'USD'), $this->order->getTotalPaid());
     $this->assertEquals(new Price('30', 'USD'), $this->order->getBalance());

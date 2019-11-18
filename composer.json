@@ -10,7 +10,9 @@
         "rusticisoftware/tincan": "1.0.0",
         "mozilla/pdf.js": "dev-master",
         "drupal/jwt": "^1.0@alpha",
-        "drupal/restui": "^1.17"
+        "drupal/restui": "^1.17",
+        "drush/drush": "^10.0",
+        "drupal/console": "~1.0"
     },
     "replace": {
         "drupal/core": "^8.7"

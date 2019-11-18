@@ -2,19 +2,18 @@
 
 namespace Drupal\Tests\commerce_payment\Kernel;
 
-use Drupal\commerce_order\Entity\OrderItemType;
 use Drupal\commerce_payment\Entity\PaymentGateway;
 use Drupal\commerce_payment\Entity\PaymentMethod;
 use Drupal\profile\Entity\Profile;
+use Drupal\Tests\commerce_order\Kernel\OrderKernelTestBase;
 use Drupal\user\Entity\User;
-use Drupal\Tests\commerce\Kernel\CommerceKernelTestBase;
 
 /**
  * Tests the payment method storage.
  *
  * @group commerce
  */
-class PaymentMethodStorageTest extends CommerceKernelTestBase {
+class PaymentMethodStorageTest extends OrderKernelTestBase {
 
   /**
    * A sample user.
@@ -43,12 +42,6 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
    * @var array
    */
   public static $modules = [
-    'address',
-    'entity_reference_revisions',
-    'profile',
-    'state_machine',
-    'commerce_product',
-    'commerce_order',
     'commerce_payment',
     'commerce_payment_example',
   ];
@@ -59,27 +52,16 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $this->installEntitySchema('profile');
-    $this->installEntitySchema('commerce_order');
-    $this->installEntitySchema('commerce_order_item');
     $this->installEntitySchema('commerce_payment');
     $this->installEntitySchema('commerce_payment_method');
-    $this->installConfig('commerce_order');
     $this->installConfig('commerce_payment');
-
-    // An order item type that doesn't need a purchasable entity, for simplicity.
-    OrderItemType::create([
-      'id' => 'test',
-      'label' => 'Test',
-      'orderType' => 'default',
-    ])->save();
 
     $payment_gateway = PaymentGateway::create([
       'id' => 'example',
       'label' => 'Example',
       'plugin' => 'example_onsite',
     ]);
-    $payment_gateway->getPlugin()->setConfiguration([
+    $payment_gateway->setPluginConfiguration([
       'api_key' => '2342fewfsfs',
       'mode' => 'test',
       'payment_method_types' => ['credit_card'],
@@ -142,7 +124,7 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
     // payment methods to be ignored.
     $payment_gateway_configuration = $this->paymentGateway->getPluginConfiguration();
     $payment_gateway_configuration['mode'] = 'live';
-    $this->paymentGateway->getPlugin()->setConfiguration($payment_gateway_configuration);
+    $this->paymentGateway->setPluginConfiguration($payment_gateway_configuration);
     $this->paymentGateway->save();
     $reusable_payment_methods = $this->storage->loadReusable($this->user, $this->paymentGateway);
     $this->assertEmpty($reusable_payment_methods);
@@ -155,6 +137,7 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
     /** @var \Drupal\profile\Entity\Profile $profile_fr */
     $profile_fr = Profile::create([
       'type' => 'customer',
+      'uid' => 0,
       'address' => [
         'organization' => '',
         'country_code' => 'FR',
@@ -164,7 +147,6 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
         'given_name' => 'John',
         'family_name' => 'LeSmith',
       ],
-      'uid' => $this->user->id(),
     ]);
     $profile_fr->save();
     /** @var \Drupal\commerce_payment\Entity\PaymentMethodInterface $payment_method_fr */
@@ -176,11 +158,11 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
       'billing_profile' => $profile_fr,
     ]);
     $payment_method_fr->save();
-
-    $this->assertEmpty($this->storage->loadReusable($this->user, $this->paymentGateway, ['US']));
+    $payment_method_fr = $this->reloadEntity($payment_method_fr);
 
     $profile_us = Profile::create([
       'type' => 'customer',
+      'uid' => 0,
       'address' => [
         'country_code' => 'US',
         'postal_code' => '53177',
@@ -190,7 +172,6 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
         'given_name' => 'Frederick',
         'family_name' => 'Pabst',
       ],
-      'uid' => $this->user->id(),
     ]);
     $profile_us->save();
     /** @var \Drupal\commerce_payment\Entity\PaymentMethodInterface $payment_method_fr */
@@ -202,8 +183,27 @@ class PaymentMethodStorageTest extends CommerceKernelTestBase {
       'billing_profile' => $profile_us,
     ]);
     $payment_method_us->save();
+    $payment_method_us = $this->reloadEntity($payment_method_us);
 
-    $this->assertTrue($this->storage->loadReusable($this->user, $this->paymentGateway, ['US']));
+    $payment_methods = $this->storage->loadReusable($this->user, $this->paymentGateway, ['US']);
+    $this->assertCount(1, $payment_methods);
+    $this->assertEquals([$payment_method_us], array_values($payment_methods));
+
+    $payment_methods = $this->storage->loadReusable($this->user, $this->paymentGateway, ['FR']);
+    $this->assertCount(1, $payment_methods);
+    $this->assertEquals([$payment_method_fr], array_values($payment_methods));
+
+    // Disable the collection of billing information.
+    $this->paymentGateway->setPluginConfiguration([
+      'collect_billing_information' => FALSE,
+      'api_key' => '2342fewfsfs',
+      'mode' => 'test',
+      'payment_method_types' => ['credit_card'],
+    ]);
+    // Confirm that no filtering is done.
+    $payment_methods = $this->storage->loadReusable($this->user, $this->paymentGateway, ['FR']);
+    $this->assertCount(2, $payment_methods);
+    $this->assertEquals([$payment_method_us, $payment_method_fr], array_values($payment_methods));
   }
 
 }

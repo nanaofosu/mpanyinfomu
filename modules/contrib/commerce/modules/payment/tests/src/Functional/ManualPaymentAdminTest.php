@@ -67,7 +67,7 @@ class ManualPaymentAdminTest extends CommerceBrowserTestBase {
       'label' => 'Manual example',
       'plugin' => 'manual',
     ]);
-    $this->paymentGateway->getPlugin()->setConfiguration([
+    $this->paymentGateway->setPluginConfiguration([
       'display_label' => 'Cash on delivery',
       'instructions' => [
         'value' => 'Test instructions.',
@@ -114,9 +114,9 @@ class ManualPaymentAdminTest extends CommerceBrowserTestBase {
     \Drupal::entityTypeManager()->getStorage('commerce_payment')->resetCache([1]);
     /** @var \Drupal\commerce_payment\Entity\PaymentInterface $payment */
     $payment = Payment::load(1);
-    $this->assertEquals($payment->getOrderId(), $this->order->id());
-    $this->assertEquals($payment->getAmount()->getNumber(), '100');
-    $this->assertEquals($payment->getState()->getLabel(), 'Pending');
+    $this->assertEquals($this->order->id(), $payment->getOrderId());
+    $this->assertEquals('100.00', $payment->getAmount()->getNumber());
+    $this->assertEquals('Pending', $payment->getState()->getLabel());
 
     $this->drupalGet($this->paymentUri . '/add');
     $this->assertSession()->pageTextContains('Manual example');
@@ -128,9 +128,9 @@ class ManualPaymentAdminTest extends CommerceBrowserTestBase {
     \Drupal::entityTypeManager()->getStorage('commerce_payment')->resetCache([2]);
     /** @var \Drupal\commerce_payment\Entity\PaymentInterface $payment */
     $payment = Payment::load(2);
-    $this->assertEquals($payment->getOrderId(), $this->order->id());
-    $this->assertEquals($payment->getAmount()->getNumber(), '100');
-    $this->assertEquals($payment->getState()->getLabel(), 'Completed');
+    $this->assertEquals($this->order->id(), $payment->getOrderId());
+    $this->assertEquals('100.00', $payment->getAmount()->getNumber());
+    $this->assertEquals('Completed', $payment->getState()->getLabel());
     $this->assertNotEmpty($payment->getCompletedTime());
   }
 
