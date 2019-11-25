@@ -1,9 +1,9 @@
 name: Philo
 type: theme
-description: 'Philo is a subtheme of Platon built for Symptoms to Diagnosis.'
+description: ''philo - a combining form appearing in loanwords from Greek, where it meant “loving” (philology); on this model, used in the formation of compound words (philoprogenitive).''
 package: Other
 core: 8.x
 libraries:
   - philo/global-styling
  
-base theme: platon
+base theme: bootstrap_barrio

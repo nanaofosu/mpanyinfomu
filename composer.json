@@ -12,7 +12,8 @@
         "drupal/jwt": "^1.0@alpha",
         "drupal/restui": "^1.17",
         "drush/drush": "^10.0",
-        "drupal/console": "~1.0"
+        "drupal/console": "~1.0",
+        "drupal/bootstrap_barrio": "^4.22"
     },
     "replace": {
         "drupal/core": "^8.7"
