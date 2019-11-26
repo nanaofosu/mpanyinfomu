@@ -1,6 +1,6 @@
-name: 
+name: Philo
 type: theme
-description: 'Basic structure for a Bootstrap Barrio SubTheme.'
+description: 'philo - a combining form appearing in loanwords from Greek, where it meant “loving” (philology); on this model, used in the formation of compound words (philoprogenitive).'
 # version: VERSION
 # core: 8.x
 base theme: bootstrap_barrio
