@@ -1,15 +1,12 @@
 name: Philo
 type: theme
-description: 'philo - a combining form appearing in loanwords from Greek, where it meant “loving” (philology); on this model, used in the formation of compound words (philoprogenitive).'
-# version: VERSION
-# core: 8.x
+description: 'Basic structure for Symptoms to Diagnosis based on Barrio.'
 base theme: bootstrap_barrio
-
 libraries:
   - philo/bootstrap_cdn
   - philo/global-styling
-  - philob/uchicago_styling
-
+  - philo/global
+  - philo/uchicago_styling
 regions:
   top_header: 'Top Header'
   branding: 'Branding'
@@ -32,16 +29,13 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 disabled:
-  help: 'Help'
-  footer: 'Footer Wrapper'
   header_form: "Header Form"
+  help: 'Help'
+  secondary_menu: 'Secondary menu'
   highlighted: Highlighted
   featured_top: 'Featured top'
   breadcrumb: Breadcrumb
-  content: Content
   featured_bottom_second: 'Featured bottom second'
   featured_bottom_third: 'Featured bottom third'
-  footer_fifth: 'Footer fifth'
-
-# Information added by Drupal.org packaging script on 2019-02-28
+  footer: 'Footer Wrapper'
 core: '8.x'

@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.philo = {
+  Drupal.behaviors.philo_barrio = {
     attach: function (context, settings) {
 
     }
