@@ -8,6 +8,18 @@
 use Drupal\Core\Form\FormStateInterface;
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ */
+function philo_theme_suggestions_block_alter(&$suggestions, $variables) {
+
+	// Load theme suggestions for blocks from parent theme.
+	foreach ($suggestions as &$suggestion) {
+		$suggestion = str_replace('platon_', 'philo_', $suggestion);
+	}
+
+}
+
+/**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
  * Replace Barrio setting options with subtheme ones.
@@ -32,6 +44,22 @@ function philo_form_system_theme_settings_alter(&$form, FormStateInterface $form
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
   );
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function philo_theme_suggestions_alter(&$suggestions, $variables, $hook) {
+	if ($hook == 'page') {
+
+		// Node type.
+		$node = \Drupal::routeMatch()->getParameter('node');
+		if ($node) {
+			$suggestions[] = 'page__node__' . $node->type->target_id;
+		}
+
+		$suggestions = array_unique($suggestions);
+	}
 }
 
 /**
