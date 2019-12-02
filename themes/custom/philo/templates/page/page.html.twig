@@ -78,7 +78,6 @@
 #}
 
 {% block head %}
-  <header>
       <nav{{ navbar_top_attributes }}>
         {{ page.branding }}
         {% if sidebar_collapse %}
@@ -99,7 +98,6 @@
           {{ page.primary_menu }}
         </div>
     </nav>
-  </header>
 {% endblock %}
 
 {% block content %}
