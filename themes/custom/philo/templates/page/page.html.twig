@@ -203,6 +203,8 @@
   <nav id="main-navbar" {{ navbar_attributes }} class="collapse navbar-collapse" id="CollapsingNavbar">
     {{ page.primary_menu }}
   </nav>
+  <!-- End Header section -->
+
 {% endblock %}
 
 {% block content %}
@@ -231,39 +233,75 @@
       {% endif %}
     </div>
   </div>
+  <!-- End Main content container -->
+
 
   {{ page.page_bottom_first }}
+  <!-- End Page Bottom First -->
+
 {% endblock %}
 
 {% block footer %}
   <div class="container-fluid">
-    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-      <div class="row">
+  <div class="row">
+
         <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
-          {{ page.footer_first }}
-          <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
-        </div>
+        {{ page.footer_first }}
+        <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
+      </div>
         <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
-          <address>
-            <a href="/"><b>Site Name</b></a><br>
-            The University of Chicago<br>
-            5801 South Ellis Avenue<br>
-            Chicago, IL 60637
-          </address>
+        <address>
+          <a href="/"><b>Site Name</b></a><br>
+          The University of Chicago<br>
+          5801 South Ellis Avenue<br>
+          Chicago, IL 60637
+        </address>
+      </div>
+      <!-- End Column 1 -->
+
+        <div class="col-xs-12 col-md-6">
+          <div class="box">
+              <div class="row">
+                  <div class="col-xs-6">
+                    {{ page.footer_second }}
+                    {{ page.footer_third }}
+                  </div>
+                  <div class="col-xs-6">
+                    <ul class="site-links uc">
+                      <li><a href="https://directory.uchicago.edu/">Directory</a></li>
+                      <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
+                      <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
+                      <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
+                    </ul>
+                  </div>
+              </div>
+              <!-- End box row -->
+          </div>
+            <!-- End Box -->
+
         </div>
-        {{ page.footer_second }}
-        <div class="col-xs-6">
-          {{ page.footer_third }}
-        </div>
+        <!-- End Column 2/3 -->
+
         <div class="col-xs-12 col-md-3 col-md-offset-9">
+          <ul class="social">
+          <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
+          <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
+          <li><a href="https://youtube.com/#" class="ss-social-circle ss-icon">YouTube</a></li>
+          <li><a href="https://linkedin.com/in/#" class="ss-social-circle ss-icon">LinkedIn</a></li>
+        </ul>
           {{ page.footer_fourth }}
         </div>
-      </div>
-    {% endif %}
-    {% if page.copyright %}
-      <div class="timestamp">
-        {{ page.copyright }}
-      </div>
-    {% endif %}
-  </div>
+        <!-- End Column 4 -->
+
+    </div>
+    <!-- End Row -->
+
+    </div>
+    <!-- End Container-Fluid -->
+
+    <div class="timestamp">
+      {{ page.copyright }}
+    </div>
+    <!-- End Copyright -->
+
 {% endblock %}

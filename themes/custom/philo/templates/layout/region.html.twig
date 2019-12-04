@@ -11,7 +11,6 @@
  *
  * @see template_preprocess_region()
  */
-#}
 {%
   set classes = [
     'region',
@@ -22,4 +21,11 @@
   <section{{ attributes.addClass(classes) }}>
     {{ content }}
   </section>
+{% endif %}
+
+
+#}
+
+{% if content %}
+  {{ content }}
 {% endif %}
