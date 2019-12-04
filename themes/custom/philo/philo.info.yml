@@ -5,7 +5,6 @@ base theme: bootstrap_barrio
 libraries:
   - philo/bootstrap_cdn
   - philo/global-styling
-  - philo/global
   - philo/uchicago_styling
 regions:
   top_header: 'Top Header'

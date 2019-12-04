@@ -75,33 +75,138 @@
  * @see bootstrap_barrio_preprocess_page()
  * @see html.html.twig
  */
+
+ <header>
+		<nav id="brandbar" class="topnav">
+  <div>
+    <a href="https://www.uchicago.edu/" id="uchicago">The University of Chicago</a>
+    <ul>
+      <li id="s"><a href="#" id="search-trigger" class="ss-icon">Search</a></li>
+    </ul>
+    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+</nav>
+		<form id="sitesearch" class="search-bar expanded" method="get" action="#" role="search">
+  <div class="search-bar-inner">
+    <div class="wrap">
+      <label for="searchtext" class="search-bar-help">Enter Search Below</label>
+      <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search…">
+      <button type="submit" class="search-submit ss-icon" disabled="">Search</button>
+    </div>
+  </div>
+</form>
+		<div class="wordmark" role="navigation">
+  <h1><a href="/">Site Name</a></h1>
+</div>
+		<nav id="main-navbar" class="collapse navbar-collapse">
+  <a id="mainnav"></a>
+  <ul class="nav navbar-nav">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Academics</a></li>
+    <li><a href="#">Research</a></li>
+    <li><a href="#">People</a></li>
+    <li><a href="#">Events</a></li>
+  </ul>
+</nav>
+	</header>
+
+ <footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+        <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+        <address>
+          <a href="/"><b>Site Name</b></a><br>
+          The University of Chicago<br>
+          5801 South Ellis Avenue<br>
+          Chicago, IL 60637
+        </address>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <div class="box">
+          <div class="row">
+            <div class="col-xs-6">
+              <ul class="site-links">
+                <li><a href="#">Footer Link 1</a></li>
+                <li><a href="#">Footer Link 2</a></li>
+                <li><a href="#">Footer Link 3</a></li>
+                <li><a href="#">Footer Link 4</a></li>
+                <li><a href="#">Footer Link 5</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6">
+              <ul class="site-links uc">
+                <li><a href="https://directory.uchicago.edu/">Directory</a></li>
+                <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
+                <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
+                <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-3 col-md-offset-9">
+        <ul class="social">
+          <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
+          <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
+          <li><a href="https://youtube.com/#" class="ss-social-circle ss-icon">YouTube</a></li>
+          <li><a href="https://linkedin.com/in/#" class="ss-social-circle ss-icon">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="timestamp">
+    <p>©2019 The University of Chicago</p>
+  </div>
+</footer>
+
 #}
 
 {% block head %}
-      <nav{{ navbar_top_attributes }}>
+  <nav id="brandbar" {{ attributes.addClass('topnav') }}>
+    <div>
+      {% if page.branding %}
         {{ page.branding }}
-        {% if sidebar_collapse %}
-              <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
-           {% endif %}
-          {{ page.secondary_menu }}
-          {{ page.top_header }}
-          {% if page.top_header_form %}
-            <div class="form-inline navbar-form float-right">
-              {{ page.top_header_form }}
-            </div>
-          {% endif %}
-      </nav>
-    {{ page.top }}
-    <nav{{ navbar_attributes }}>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="CollapsingNavbar">
-          {{ page.primary_menu }}
+      {% else %}
+        <a href="https://www.uchicago.edu/" id="uchicago"> The University of Chicago</a>
+      {% endif %}
+      <div class="float-right">
+        {{ page.secondary_menu }}
+        {{ page.top_header }}
+      </div>
+      {% if page.top_header_form %}
+        <div class="form-inline navbar-form float-right">
+          <ul>
+            <li id="s"><a href="#" id="search-trigger" class="ss-icon">Search</a>{{ page.top_header_form }}</li>
+          </ul>
         </div>
-    </nav>
+      {% endif %}
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="wordmark" role="navigation">
+    {{ page.top }}
+  </div>
+  <nav id="main-navbar" {{ navbar_attributes }} class="collapse navbar-collapse" id="CollapsingNavbar">
+    {{ page.primary_menu }}
+  </nav>
 {% endblock %}
 
 {% block content %}
-  <div id="main" class="{{ container }}">
+  <div id="main" class="maincontent {{ container }}">
     {{ page.status_messages }}
     <div class="row row-offcanvas row-offcanvas-left clearfix">
       <main{{ content_attributes }}>
@@ -126,25 +231,39 @@
       {% endif %}
     </div>
   </div>
-  <section>
-    {{ page.page_bottom_first }}
-  </section>
+
+  {{ page.page_bottom_first }}
 {% endblock %}
 
 {% block footer %}
-  <footer>
+  <div class="container-fluid">
     {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-      <div class="site-footer__top clearfix">
-        {{ page.footer_first }}
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+          {{ page.footer_first }}
+          <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+          <address>
+            <a href="/"><b>Site Name</b></a><br>
+            The University of Chicago<br>
+            5801 South Ellis Avenue<br>
+            Chicago, IL 60637
+          </address>
+        </div>
         {{ page.footer_second }}
-        {{ page.footer_third }}
-        {{ page.footer_fourth }}
+        <div class="col-xs-6">
+          {{ page.footer_third }}
+        </div>
+        <div class="col-xs-12 col-md-3 col-md-offset-9">
+          {{ page.footer_fourth }}
+        </div>
       </div>
     {% endif %}
-    {% if page.footer_fifth %}
-      <div class="site-footer__bottom">
+    {% if page.copyright %}
+      <div class="timestamp">
         {{ page.copyright }}
       </div>
     {% endif %}
-  </footer>
+  </div>
 {% endblock %}

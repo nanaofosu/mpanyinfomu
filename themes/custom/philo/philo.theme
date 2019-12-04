@@ -16,13 +16,14 @@ use Drupal\Core\Form\FormStateInterface;
  *
  */
 function philo_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
   );
   $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
       'bg-primary' => t('Primary'),
@@ -32,6 +33,7 @@ function philo_form_system_theme_settings_alter(&$form, FormStateInterface $form
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
   );
+
 }
 
 /**
@@ -102,7 +104,33 @@ function philo_preprocess_page(&$variables)
  */
 function philo_preprocess_region(&$variables)
 {
-  $variables['attributes']['class'] = ['region', 'region-' . $variables['region']];
+  //$variables['attributes']['class'] = ['region', 'region-' . $variables['region']];
+  /**$nowrap = [
+    'top_header',
+    'branding',
+    'secondary_menu',
+    'top_header',
+    'top',
+    'primary_menu',
+    'admin_opigno',
+    'header',
+    'top_header_form',
+    'status_messages',
+    'content',
+    'sidebar_first',
+    'sidebar_second',
+    'feature_bottom_first',
+    'page_top',
+    'page_bottom'
+  ];
+   *
+   * /
+   */
+  $nowrap = ['top_header', 'status_messages', 'sidebar_first', 'sidebar_second',
+    'page_top', 'page_bottom',];
+  if (!in_array($variables['elements']['#region'], $nowrap)) {
+    $variables['attributes']['class'][] = 'row';
+  }
 }
 
 /**
@@ -204,6 +232,8 @@ function philo_preprocess_field(&$variables)
   }
 }
 
+
+
 /**
  * Implements hook_preprocess_block().
  */
@@ -214,3 +244,18 @@ function philo_preprocess_block(&$variables) {
   }
 }
 
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for region templates.
+ */
+function philo_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+  $nowrap = ['top_header', 'branding', 'secondary_menu', 'sidebar_first',
+    'sidebar_second', 'page_top', 'page_bottom',
+  ];
+
+  $region_clean = in_array($variables['elements']['#region'], $nowrap);
+
+  if ( $region_clean ) {
+    $suggestions[] = 'region__nowrap';
+  }
+}
