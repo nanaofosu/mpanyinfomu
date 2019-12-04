@@ -25,3 +25,7 @@ uchicago_styling:
   css:
     component:
       src/vita/main.css: {}
+  js:
+    js/base.js: {}
+    js/main-nav.js: {}
+    js/site-search: {}
