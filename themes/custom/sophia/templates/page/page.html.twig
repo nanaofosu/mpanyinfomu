@@ -162,7 +162,7 @@
 </footer>
 
 #}
-<div id="wrapper">
+<div id="wrapper" class="">
   <header>
     <nav id="brandbar" {{ attributes.addClass('topnav') }}>
       <div>
@@ -194,11 +194,15 @@
     </nav>
   </header>
   <!-- End Header section -->
-  <section id="featured_top">
-    {{ page.featured_top }}
+  <section id="featured-top" class="container">
+    <div class="row">
+      {{ page.featured_top }}
+      <p><br></p>
+      <code>Featured Top</code>
+    </div>
   </section>
 
-  <div id="main" class="maincontent {{ container }}">
+  <div class="maincontent container">
     <div class="row row-offcanvas row-offcanvas-left clearfix">
       <main{{ content_attributes }}>
         <section class="section">
@@ -225,7 +229,13 @@
   <!-- End Main content container -->
 
 
-  <section>{{ page.page_bottom }}</section>
+  <section id="featured-bottom" class="container-fluid">
+    <div class="row">
+      {{  page.page_bottom }}
+      <p><br></p>
+      <code>Featured Bottom</code>
+    </div>
+  </section>
   <!-- End Page Bottom First -->
   <footer>
     <div class="container-fluid">

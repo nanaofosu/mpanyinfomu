@@ -2,5 +2,9 @@
  * @file
  * Subtheme specific CSS.
  */
-
+body {}
 nav#brandbar { background-color: #800000; color: white;}
+main { padding: 1em 0; margin: 1em 0;}
+footer {padding: 3em 0 1em 0;}
+#featured-top,
+#featured-bottom {margin: 1em 0; text-align: center;}
