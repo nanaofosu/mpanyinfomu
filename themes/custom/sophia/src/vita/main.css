@@ -161,6 +161,13 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-family: "Gotham SSm A", "Gotham SSm B", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: normal;
   color: #4d4d4d; }
 
 .maincontent {
@@ -190,7 +197,15 @@ body {
     width: 100%;
     max-width: 1430px; }
   .topnav a#uchicago {
+    position: relative;
+    left: 0;
+    transition: all 0.25s ease-in-out !important;
     display: flex;
+    font-family: "Gotham SSm A", "Gotham SSm B", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.66667em;
+    letter-spacing: normal;
     color: white;
     text-transform: uppercase;
     text-decoration: none;
@@ -199,6 +214,8 @@ body {
     padding: 0;
     align-items: center;
     transition: all 0.25s ease-in-out; }
+    .topnav a#uchicago:hover, .topnav a#uchicagofocus {
+      left: 3px; }
     .topnav a#uchicago:focus, .topnav a#uchicago:hover {
       text-decoration: none; }
     .topnav a#uchicago:before {
@@ -213,7 +230,8 @@ body {
     background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 0; }
+    border-radius: 0;
+    padding: .75em 0 .75em .75em; }
     .topnav .navbar-toggle:focus {
       outline: 0; }
     .topnav .navbar-toggle .icon-bar {
@@ -252,101 +270,6 @@ body {
         color: white;
         background: none;
         text-decoration: none; }
-
-#main-navbar {
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: auto;
-  font-family: "Gotham SSm A", "Gotham SSm B", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 18px;
-  letter-spacing: normal;
-  background-color: #fafafa;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0; }
-  #main-navbar a {
-    display: inline; }
-  #main-navbar ul {
-    width: 100%;
-    float: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 0; }
-    @media (min-width: 992px) {
-      #main-navbar ul {
-        margin: 0 auto;
-        display: flex;
-        flex: 1;
-        max-width: 1430px;
-        margin-top: 0;
-        margin-bottom: 0; } }
-    #main-navbar ul > li {
-      list-style-type: none;
-      float: none; }
-      @media (min-width: 992px) {
-        #main-navbar ul > li {
-          display: flex;
-          flex: 1; } }
-      #main-navbar ul > li a {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: .72222222em;
-        color: maroon;
-        background-color: #fafafa;
-        border-bottom: 4px solid #fafafa;
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center; }
-        @media (min-width: 992px) {
-          #main-navbar ul > li a {
-            font-size: 0.6999999999999em;
-            flex: 1; } }
-        @media (min-width: 992px) and (max-height: 850px) {
-          #main-navbar ul > li a {
-            font-size: 0.666666667em; } }
-        #main-navbar ul > li a:focus, #main-navbar ul > li a:hover {
-          color: maroon;
-          border-bottom: 4px solid #e0e0e0; }
-      #main-navbar ul > li.dropdown-active a, #main-navbar ul > li.here a, #main-navbar ul > li.parent-here a {
-        font-weight: 500;
-        color: maroon;
-        border-bottom: 4px solid maroon; }
-      #main-navbar ul > li.here .dropdown-menu, #main-navbar ul > li.parent-here .dropdown-menu {
-        display: none !important; }
-  .no-js #main-navbar ul li ul {
-    display: none; }
-  #main-navbar.navbar-collapse {
-    overflow-x: visible;
-    padding-right: 15px;
-    padding-left: 15px;
-    -webkit-overflow-scrolling: touch; }
-    #main-navbar.navbar-collapse.in {
-      overflow-y: auto; }
-    @media (min-width: 992px) {
-      #main-navbar.navbar-collapse {
-        width: auto; }
-        #main-navbar.navbar-collapse.collapse {
-          display: block !important;
-          height: auto !important;
-          padding-bottom: 0;
-          overflow: visible !important; }
-        #main-navbar.navbar-collapse.in {
-          overflow-y: visible; }
-        .navbar-fixed-top #main-navbar.navbar-collapse, .navbar-static-top #main-navbar.navbar-collapse, .navbar-fixed-bottom #main-navbar.navbar-collapse {
-          padding-left: 0;
-          padding-right: 0; } }
-
-.collapse {
-  display: none; }
-
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden; }
 
 .wordmark {
   padding: 20px 0;
@@ -518,6 +441,101 @@ body {
     padding: 6px; }
   .lt-ie10 .placeholder {
     color: #666666; }
+
+#main-navbar {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-family: "Gotham SSm A", "Gotham SSm B", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: normal;
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0; }
+  #main-navbar a {
+    display: inline; }
+  #main-navbar ul {
+    width: 100%;
+    float: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0; }
+    @media (min-width: 992px) {
+      #main-navbar ul {
+        margin: 0 auto;
+        display: flex;
+        flex: 1;
+        max-width: 1430px;
+        margin-top: 0;
+        margin-bottom: 0; } }
+    #main-navbar ul > li {
+      list-style-type: none;
+      float: none; }
+      @media (min-width: 992px) {
+        #main-navbar ul > li {
+          display: flex;
+          flex: 1; } }
+      #main-navbar ul > li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .72222222em;
+        color: maroon;
+        background-color: #fafafa;
+        border-bottom: 4px solid #fafafa;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        @media (min-width: 992px) {
+          #main-navbar ul > li a {
+            font-size: 0.6999999999999em;
+            flex: 1; } }
+        @media (min-width: 992px) and (max-height: 850px) {
+          #main-navbar ul > li a {
+            font-size: 0.666666667em; } }
+        #main-navbar ul > li a:focus, #main-navbar ul > li a:hover {
+          color: maroon;
+          border-bottom: 4px solid #e0e0e0; }
+      #main-navbar ul > li.dropdown-active a, #main-navbar ul > li.here a, #main-navbar ul > li.parent-here a {
+        font-weight: 500;
+        color: maroon;
+        border-bottom: 4px solid maroon; }
+      #main-navbar ul > li.here .dropdown-menu, #main-navbar ul > li.parent-here .dropdown-menu {
+        display: none !important; }
+  .no-js #main-navbar ul li ul {
+    display: none; }
+  #main-navbar.navbar-collapse {
+    overflow-x: visible;
+    padding-right: 15px;
+    padding-left: 15px;
+    -webkit-overflow-scrolling: touch; }
+    #main-navbar.navbar-collapse.in {
+      overflow-y: auto; }
+    @media (min-width: 992px) {
+      #main-navbar.navbar-collapse {
+        width: auto; }
+        #main-navbar.navbar-collapse.collapse {
+          display: block !important;
+          height: auto !important;
+          padding-bottom: 0;
+          overflow: visible !important; }
+        #main-navbar.navbar-collapse.in {
+          overflow-y: visible; }
+        .navbar-fixed-top #main-navbar.navbar-collapse, .navbar-static-top #main-navbar.navbar-collapse, .navbar-fixed-bottom #main-navbar.navbar-collapse {
+          padding-left: 0;
+          padding-right: 0; } }
+
+.collapse {
+  display: none; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden; }
 
 footer {
   -webkit-font-smoothing: subpixel-antialiased;

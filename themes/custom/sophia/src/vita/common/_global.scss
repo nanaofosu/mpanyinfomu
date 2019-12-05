@@ -31,8 +31,8 @@ body {
 	display: flex;
 	flex-direction: column;
   position: relative;
-//  @include font-smoothing(off);
-//  @include gotham-light($font-base-size * 1.125);
+@include font-smoothing(off);
+@include gotham-light($font-base-size * 1.125);
   color: $text-color;
 }
 

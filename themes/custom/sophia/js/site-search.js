@@ -28,7 +28,7 @@ $(function() {
         }
       })
     });
-  };
+  }
 
   // Trigger search field
   searchTrigger.on('click',function(e){

@@ -16,6 +16,7 @@ uchicago_styling:
   version: VERSION
   css:
     component:
+      //cloud.typography.com/6526092/7294572/css/fonts.css: {}
       src/vita/main.css: {}
   js:
     js/base.js: {}

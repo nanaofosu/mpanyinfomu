@@ -28,6 +28,18 @@
   }
 }
 
+@mixin link-shifter($value: true) {
+  position: relative;
+  left: 0;
+  transition: all 0.25s ease-in-out !important;
+
+  &:hover,
+  &focus {
+    left: 3px;
+
+  }
+}
+
 // Link shifter style
 .link-shifter {
   position: relative;
