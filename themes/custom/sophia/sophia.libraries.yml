@@ -21,4 +21,4 @@ uchicago_styling:
   js:
     js/base.js: {}
     js/main-nav.js: {}
-    js/site-search: {}
+    js/site-search.js: {}

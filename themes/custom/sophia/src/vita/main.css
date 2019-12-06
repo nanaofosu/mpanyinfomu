@@ -29,14 +29,6 @@
   .link-shifter:hover, .link-shifterfocus {
     left: 3px; }
 
-.row-padding {
-  padding-top: 30px;
-  padding-bottom: 30px; }
-  @media (min-width: 992px) {
-    .row-padding {
-      padding-top: 60px;
-      padding-bottom: 60px; } }
-
 /* Symbolset * www.symbolset.com * Copyright © 2012 Oak Studios LLC */
 @font-face {
   font-family: "SSSocial";

@@ -52,7 +52,7 @@
   }
 }
 
-.row-padding {
+@mixin row-padding ($value: true) {
 	padding-top: $grid-gutter-width;
   padding-bottom: $grid-gutter-width;
 	@media (min-width: $screen-md-min) {

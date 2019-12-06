@@ -65,43 +65,54 @@
  *
  * @see template_preprocess_page()
  */
+
+       <div class="form-inline navbar-form float-right">
+        <ul>
+          <li id="s"><a href="#" id="search-trigger" class="ss-icon">Search</a>{{ page.search }}</li>
+        </ul>
+      </div>
+
+          <nav id="main-navbar" class="collapse navbar-collapse">
+      <a id="mainnav"></a>
+    </nav>
 #}
-<div id="wrapper" class="">
+<div id="wrapper">
   <header>
-    <nav id="brandbar" {{ attributes.addClass('topnav') }}>
-      <div>
+    <nav id="brandbar" class="topnav navbar navbar-expand-lg">
+      <div class="container page">
+        <button class="navbar-toggler" data-toggle="collapse" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         {% if page.branding %}
           {{ page.branding }}
         {% else %}
           <a href="https://www.uchicago.edu/" id="uchicago"> The University of Chicago</a>
         {% endif %}
         <div class="float-right">
-          {{ page.quicklinks }}
+          {{ page.quick_links }}
+          <form id="sitesearch" class="form-inline search-bar expanded" method="get" action="#" role="search">
+            <div class="search-bar-inner">
+              <div class="wrap">
+                <label for="searchtext" class="search-bar-help">Enter Search Below</label>
+                <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search…">
+                <button type="submit" class="search-submit ss-icon" disabled="">Search</button>
+              </div>
+            </div>
+          </form>
         </div>
-        {% if page.search %}
-          <div class="form-inline navbar-form float-right">
-            <ul>
-              <li id="s"><a href="#" id="search-trigger" class="ss-icon">Search</a>{{ page.search }}</li>
-            </ul>
-          </div>
-        {% endif %}
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
       </div>
     </nav>
     <div class="wordmark" role="navigation">
       {{ page.wordmark }}
     </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" id="CollapsingNavbar">
-      {{ page.primary_menu }}
-    </nav>
+    {{ page.primary_menu }}
+
   </header>
   <!-- End Header section -->
 
   <div class="maincontent container">
     <div class="row row-offcanvas row-offcanvas-left clearfix">
-      <div{{ sidebar_first_attributes }} class="col-sm-3 col-lg-3">
+      <div{{ sidebar_first_attributes }} class="col-sm-3 col-md-3 col-lg-3">
         <aside class="section" role="complementary">
           {{ page.sidebar_first }}
           <p>sidebar 1</p>
@@ -110,8 +121,8 @@
 
       <main class="col-sm-6 col-md-6 col-lg-6">
         <section id="featured-top" class="section-title">
-            {{ page.featured_top }}
-            <code>Featured Top</code>
+          {{ page.featured_top }}
+          <code>Featured Top</code>
         </section>
         <!-- End Page Top -->
 
@@ -147,11 +158,11 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
           {{ page.footer_first }}
           <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
         </div>
-        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+        <div class="col-xs-6 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
           <address>
             <a href="/"><b>Site Name</b></a><br>
             The University of Chicago<br>
@@ -161,28 +172,25 @@
         </div>
         <!-- End Column 1 -->
 
-        <div class="col-xs-12 col-md-6">
-          <div class="box">
-            <div class="row">
-              <div class="col-xs-6">
-                {{ page.footer_second }}
-                {{ page.footer_third }}
-                <ul class="site-links uc">
-                  <li><a href="https://directory.uchicago.edu/">Directory</a></li>
-                  <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
-                  <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
-                  <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
-                </ul>
-              </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <div class="container-inline">
+            <div class="col-xs-6">
+              {{ page.footer_second }}
+              {{ page.footer_third }}
+              <ul class="site-links uc">
+                <li><a href="https://directory.uchicago.edu/">Directory</a></li>
+                <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
+                <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
+                <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
+              </ul>
             </div>
-            <!-- End box row -->
           </div>
-          <!-- End Box -->
-
+          <!-- End box row -->
         </div>
-        <!-- End Column 2/3 -->
+        <!-- End container-inline -->
 
-        <div class="col-xs-12 col-md-3 col-md-offset-9">
+
+        <div class="col-md-3 col-sm-3 col-xs-3 hidden-print">
           <ul class="social">
             <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
             <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
