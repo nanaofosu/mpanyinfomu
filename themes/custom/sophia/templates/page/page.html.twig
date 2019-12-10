@@ -1,0 +1,215 @@
+{#
+/**
+ * @file
+ * Sophia theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.ribbon: Items for the top header region.
+ * - page.branding: Items for the top header form region.
+ * - page.quick_links: Items for the secondary menu region and quick links.
+ * - page.search: Items for the top header form region.
+ * - page.wordmark: Items for the top header form region or the "WordMark" section"
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.admin_menu: Items for the Opigno Admin menu region.
+ * - page.featured_top: Items for the status message region.
+ * - page.content: The main content of the current page.
+ * - page.featured_bottom: Items for the first featured bottom region.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.copyright: Items for the fifth footer column.
+ *
+ * Regions Disabled:
+ * - page.featured_top: Items for the featured top region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.header_form: Items for the header form region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ * - page.header: Items for the header region. (unsure)
+ *
+ * Theme variables:
+ *
+ * @see template_preprocess_page()
+ */
+
+       <div class="form-inline navbar-form float-right">
+        <ul>
+          <li id="s"><a href="#" id="search-trigger" class="ss-icon">Search</a>{{ page.search }}</li>
+        </ul>
+      </div>
+
+          <nav id="main-navbar" class="collapse navbar-collapse">
+      <a id="mainnav"></a>
+    </nav>
+#}
+<div id="wrapper">
+  <header>
+    <nav id="brandbar" class="topnav navbar navbar-expand-lg">
+      <div class="container page">
+        <button class="navbar-toggler" data-toggle="collapse" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% if page.branding %}
+          {{ page.branding }}
+        {% else %}
+          <a href="https://www.uchicago.edu/" id="uchicago"> The University of Chicago</a>
+        {% endif %}
+        <div class="float-right">
+          {{ page.quick_links }}
+          <form id="sitesearch" class="form-inline search-bar expanded" method="get" action="#" role="search">
+            <div class="search-bar-inner">
+              <div class="wrap">
+                <label for="searchtext" class="search-bar-help">Enter Search Below</label>
+                <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search…">
+                <button type="submit" class="search-submit ss-icon" disabled="">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="wordmark" role="navigation">
+      {{ page.wordmark }}
+    </div>
+    {{ page.primary_menu }}
+
+  </header>
+  <!-- End Header section -->
+
+  <div class="maincontent container">
+    <div class="row row-offcanvas row-offcanvas-left clearfix">
+      <div{{ sidebar_first_attributes }} class="col-sm-3 col-md-3 col-lg-3">
+        <aside class="section" role="complementary">
+          {{ page.sidebar_first }}
+          <p>sidebar 1</p>
+        </aside>
+      </div>
+
+      <main class="col-sm-6 col-md-6 col-lg-6">
+        <section id="featured-top" class="section-title">
+          {{ page.featured_top }}
+          <code>Featured Top</code>
+        </section>
+        <!-- End Page Top -->
+
+        <section class="section">
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.content }}
+        </section>
+        <!-- End Page Content -->
+      </main>
+
+      <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
+        <aside class="section" role="complementary">
+          {{ page.sidebar_second }}
+          <p>sidebar 2</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <!-- End Main content container -->
+
+  <section id="featured-bottom" class="container-fluid page gray">
+    <div class="row module">
+      <p> {{  page.page_bottom }}
+        <br>
+      </p>
+      <code>Featured Bottom</code>
+    </div>
+  </section>
+  <!-- End Page Bottom First -->
+
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+          {{ page.footer_first }}
+          <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
+        </div>
+        <div class="col-xs-6 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
+          <address>
+            <a href="/"><b>Site Name</b></a><br>
+            The University of Chicago<br>
+            5801 South Ellis Avenue<br>
+            Chicago, IL 60637
+          </address>
+        </div>
+        <!-- End Column 1 -->
+
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <div class="container-inline">
+            <div class="col-xs-6">
+              {{ page.footer_second }}
+              {{ page.footer_third }}
+              <ul class="site-links uc">
+                <li><a href="https://directory.uchicago.edu/">Directory</a></li>
+                <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
+                <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
+                <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- End box row -->
+        </div>
+        <!-- End container-inline -->
+
+
+        <div class="col-md-3 col-sm-3 col-xs-3 hidden-print">
+          <ul class="social">
+            <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
+            <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
+            <li><a href="https://youtube.com/#" class="ss-social-circle ss-icon">YouTube</a></li>
+            <li><a href="https://linkedin.com/in/#" class="ss-social-circle ss-icon">LinkedIn</a></li>
+          </ul>
+          {{ page.footer_fourth }}
+        </div>
+        <!-- End Column 4 -->
+
+      </div>
+      <!-- End Row -->
+
+    </div>
+    <!-- End Container-Fluid -->
+
+    <div class="timestamp">
+      {{ page.copyright }}
+    </div>
+    <!-- End Copyright -->
+  </footer>
+</div>

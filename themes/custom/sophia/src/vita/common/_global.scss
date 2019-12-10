@@ -1,0 +1,53 @@
+// Reset
+//@import "libs/normalize.css.scss";
+
+// Custom
+//@import "libs/helper-classes.css.scss";
+//@import "variables.scss";
+
+// Box sizing reset
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// Default font sizing/color
+html,
+body {
+	height: 100%;
+}
+body {
+ overflow-y: scroll;
+  min-height: 100%;
+	display: flex;
+	flex-direction: column;
+  position: relative;
+@include font-smoothing(off);
+@include gotham-light($font-base-size * 1.125);
+  color: $text-color;
+}
+
+.maincontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex:1;
+  width:100%;
+  min-height: 30vh;
+  max-width: 1430px;
+  margin: 0 auto;
+  code {
+    padding:3em;
+  }
+}
+

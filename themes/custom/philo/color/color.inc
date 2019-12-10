@@ -115,7 +115,7 @@ $info = [
   ],
 
   // Preview files.
-  'preview_library' => 'philo/color.preview',
+  'preview_library' => 'philo_barrio/color.preview',
   'preview_html' => 'color/preview.html',
 
   // Attachments.
