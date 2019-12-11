@@ -1,0 +1,133 @@
+
+//@import "libs/helper-classes.css.scss";
+//@import "libs/variables.css.scss";
+
+.topnav {
+  background-color: $maroon;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: ($grid-gutter-width/2);
+    width:100%;
+    max-width: 1430px;
+  }
+
+  a#uchicago {
+    @include link-shifter;
+    display: flex;
+    @include gotham-medium(0.666666667em);
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1em;
+    margin: 0;
+    padding:0;
+    align-items: center;
+    transition: all 0.25s ease-in-out;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 25px;
+      margin-right: 8px;
+      background: transparent url('#{$cf-shared}phoenix.svg') 0 0 no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  // Navbar toggle
+  //
+  // Custom button for toggling the `.navbar-collapse`, powered by the collapse
+  // JavaScript plugin.
+  @mixin navbar-vertical-align($element-height) {
+    margin-top: (($navbar-height - $element-height) / 2);
+    margin-bottom: (($navbar-height - $element-height) / 2);
+  }
+
+  .navbar-toggle {
+    background-color: transparent;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    border-radius: $border-radius-base;
+    padding: .75em 0 .75em .75em;
+    // We remove the `outline` here, but later compensate by attaching `:hover`
+    // styles to `:focus`.
+    &:focus {
+      outline: 0;
+    }
+
+    // Bars
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      background: $white;
+    }
+    .icon-bar + .icon-bar {
+      margin-top: 4px;
+    }
+
+    @media (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+
+
+  ul {
+    margin:0;
+    padding:0;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    li {
+      display: flex;
+
+      &#s {
+        a {
+          color: $white;
+          font-size: 1.111111111em;
+        }
+      }
+    }
+
+    a {
+      color: $white;
+      display: block;
+      padding: .75em .75em 0.5em .75em;
+      line-height: 1em;
+      @media (min-width: $screen-md-min) {
+        padding: .75em;
+      }
+      &#search-trigger {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        li & {
+          top: 0;
+        }
+      }
+
+      &:focus,
+      &:hover {
+        color: $white;
+        background: none;
+        text-decoration: none;
+      }
+    }
+  }
+}

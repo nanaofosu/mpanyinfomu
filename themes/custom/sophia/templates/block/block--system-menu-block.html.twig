@@ -37,7 +37,7 @@
 #}
 {% set heading_id = 'main-navbar' %}
 
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }} {{ attributes.addClass('navbar-collapse', 'collapse') }}>
+<nav id="main-navbar" role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes.addClass('navbar-collapse', 'collapse') }}>
   <a class="main-navbar"></a>
   {# Menu. #}
   {% block content %}

@@ -1,24 +1,30 @@
 global:
   version: VERSION
+  css:
+    theme:
+      src/global/sass/style.css: {}
   js:
     js/global.js: {}
-  css:
-    component:
-      css/style.css: {}
-bootstrap_cdn:
-  js:
-    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js: {}
-    //stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js: {}
-  css:
-    component:
-      //stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css: {}
+  dependencies:
+    - core/jquery.once
 uchicago_styling:
   version: VERSION
   css:
     component:
-      //cloud.typography.com/6526092/7294572/css/fonts.css: {}
-      src/vita/main.css: {}
+      https://cloud.typography.com/6526092/7294572/css/fonts.css: { type: external }
+      src/vita/sass/main.css: {}
   js:
     js/base.js: {}
     js/main-nav.js: {}
     js/site-search.js: {}
+  dependencies:
+    - core/modernizr
+bootstrap_3:
+  css:
+    component:
+      https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css: { attributes: { crossorigin: anonymous } }
+  js:
+    https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js: { type: external, attributes: { integrity: sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd, crossorigin: anonymous} }
+  dependencies:
+    - core/jquery
+    - core/drupal

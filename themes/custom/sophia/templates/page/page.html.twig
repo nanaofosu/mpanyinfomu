@@ -75,43 +75,71 @@
           <nav id="main-navbar" class="collapse navbar-collapse">
       <a id="mainnav"></a>
     </nav>
+    <div id="quicklinks" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close hidden-print" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Quick Links</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li><a href="/about/">About Us</a></li><li><a href="/landing-page/">Landing Page</a></li><li><a href="/about/our-people/">Our People</a></li>
+        </ul>
+      </div>
+      <div class="modal-footer hidden-print">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal section -->
 #}
-<div id="wrapper">
-  <header>
-    <nav id="brandbar" class="topnav navbar navbar-expand-lg">
+
+
+<header class="navbar navbar-static-top" id="top">
+  <div class="page">
+    <nav class="topnav navbar-collapse">
       <div class="container page">
-        <button class="navbar-toggler" data-toggle="collapse" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        {% if page.branding %}
-          {{ page.branding }}
-        {% else %}
-          <a href="https://www.uchicago.edu/" id="uchicago"> The University of Chicago</a>
-        {% endif %}
-        <div class="float-right">
-          {{ page.quick_links }}
-          <form id="sitesearch" class="form-inline search-bar expanded" method="get" action="#" role="search">
-            <div class="search-bar-inner">
-              <div class="wrap">
-                <label for="searchtext" class="search-bar-help">Enter Search Below</label>
-                <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search…">
-                <button type="submit" class="search-submit ss-icon" disabled="">Search</button>
-              </div>
-            </div>
-          </form>
+        <a href="https://www.uchicago.edu/" id="uchicago">The University of Chicago</a>
+        <ul class="nav navbar-nav navbar-right"><li><a href="#" data-toggle="modal" data-target="#quicklinks">Quick Links</a></li><li id="s"><a href="/search/" id="search-trigger" class="ss-icon">Search</a></li></ul>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+    </nav>
+    <form id="sitesearch" class="search-bar expanded" method="get" action="/search" role="search">
+      <div class="search-bar-inner">
+        <div class="wrap">
+          <label for="searchtext" class="search-bar-help">Enter Search Below</label>
+          <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search&#8230;">
+          <button type="submit" class="search-submit ss-icon">Search</button>
         </div>
       </div>
-    </nav>
-    <div class="wordmark" role="navigation">
-      {{ page.wordmark }}
+    </form>
+    <div class="wordmark" role="navigation"><h1><a href="/">EE Demo Site</a></h1></div>
+  </div>
+  {{ page.primary_menu }}
+</header>
+<!-- Header section -->
+
+<section id="featured-top" class="container-fluid page">
+  <div class="row module">
+    <div class="col-sm-12 col-md-12 col-lg-12 section-title">
+      {{ page.featured_top }}
     </div>
-    {{ page.primary_menu }}
+    <div class="container-fluid page" role="complementary">
 
-  </header>
-  <!-- End Header section -->
+    </div>
+  </div>
+</section>
+<!-- End Page Top -->
 
-  <div class="maincontent container">
-    <div class="row row-offcanvas row-offcanvas-left clearfix">
+<div class="maincontent container">
+  <div class="row row-offcanvas row-offcanvas-left clearfix">
+    {% if page.sidebar_first and page.content %}
       <div{{ sidebar_first_attributes }} class="col-sm-3 col-md-3 col-lg-3">
         <aside class="section" role="complementary">
           {{ page.sidebar_first }}
@@ -119,12 +147,41 @@
         </aside>
       </div>
 
-      <main class="col-sm-6 col-md-6 col-lg-6">
-        <section id="featured-top" class="section-title">
-          {{ page.featured_top }}
-          <code>Featured Top</code>
-        </section>
-        <!-- End Page Top -->
+      {% if page.content and page.sidebar_second %}
+        <main class="col-sm-6 col-md-6 col-lg-6">
+          <section>{{ page.highlighted }}</section>
+          <!-- End Highlighted -->
+
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+            {{ page.content }}
+          </section>
+          <!-- End Page Content -->
+        </main>
+
+        <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
+          <aside class="section" role="complementary">
+            {{ page.sidebar_second }}
+            <p>sidebar 2</p>
+          </aside>
+        </div>
+        <!-- End Page Content -->
+      {% else %}
+        <section>{{ page.highlighted }}</section>
+        <!-- End Highlighted -->
+
+        <main class="col-sm-12 col-md-12 col-lg-12">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+            {{ page.content }}
+          </section>
+          <!-- End Page Content -->
+        </main>
+      {% endif %}
+    {% elseif page.content and page_sidebar_second %}
+      <main class="col-sm-9 col-md-9 col-lg-9">
+        <section>{{ page.highlighted }}</section>
+        <!-- End Highlighted -->
 
         <section class="section">
           <a id="main-content" tabindex="-1"></a>
@@ -132,84 +189,105 @@
         </section>
         <!-- End Page Content -->
       </main>
-
       <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
         <aside class="section" role="complementary">
           {{ page.sidebar_second }}
           <p>sidebar 2</p>
         </aside>
       </div>
-    </div>
-  </div>
-  <!-- End Main content container -->
+      <!-- End Page Content -->
+    {% else %}
+      <main class="col-sm-12 col-md-12 col-lg-12">
+        <section>{{ page.highlighted }}</section>
+        <!-- End Highlighted -->
 
-  <section id="featured-bottom" class="container-fluid page gray">
-    <div class="row module">
+        <section class="section">
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.content }}
+        </section>
+        <!-- End Page Content -->
+      </main>
+    {% endif %}
+
+  </div>
+  <!-- End Main Content Row  -->
+
+</div>
+<!-- End Main content container -->
+
+<section id="featured-bottom" class="container-fluid page gray">
+  <div class="row module">
+    <div class="col-sm-12 col-md-12 col-lg-12">
       <p> {{  page.page_bottom }}
         <br>
       </p>
       <code>Featured Bottom</code>
     </div>
-  </section>
-  <!-- End Page Bottom First -->
+  </div>
+</section>
+<!-- End Page Bottom First -->
 
+<footer class="sticky-bottom">
+  <div class="container-fluid">
+    <div class="row">
 
-  <footer>
-    <div class="container-fluid">
-      <div class="row">
-
-        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
-          {{ page.footer_first }}
-          <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
-        </div>
-        <div class="col-xs-6 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
-          <address>
-            <a href="/"><b>Site Name</b></a><br>
-            The University of Chicago<br>
-            5801 South Ellis Avenue<br>
-            Chicago, IL 60637
-          </address>
-        </div>
-        <!-- End Column 1 -->
-
-        <div class="col-md-3 col-sm-3 col-xs-3">
-          <div class="container-inline">
-            <div class="col-xs-6">
-              {{ page.footer_second }}
-              {{ page.footer_third }}
-              <ul class="site-links uc">
-                <li><a href="https://directory.uchicago.edu/">Directory</a></li>
-                <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
-                <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
-                <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- End box row -->
-        </div>
-        <!-- End container-inline -->
-
-
-        <div class="col-md-3 col-sm-3 col-xs-3 hidden-print">
-          <ul class="social">
-            <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
-            <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
-            <li><a href="https://youtube.com/#" class="ss-social-circle ss-icon">YouTube</a></li>
-            <li><a href="https://linkedin.com/in/#" class="ss-social-circle ss-icon">LinkedIn</a></li>
-          </ul>
-          {{ page.footer_fourth }}
-        </div>
-        <!-- End Column 4 -->
-
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        {{ page.footer_first }}
+        <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
       </div>
-      <!-- End Row -->
+      <!-- End Column 1 -->
+
+      <div class="col-sm-3 col-sm-3 col-md-3">
+        <address>
+          <a href="/"><b>Site Name</b></a><br>
+          The University of Chicago<br>
+          5801 South Ellis Avenue<br>
+          Chicago, IL 60637
+        </address>
+      </div>
+      <!-- End Column 2 -->
+
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <!--div class="container-inline" -->
+        <!--div class="col-xs-6"-->
+        {{ page.footer_second }}
+        {{ page.footer_third }}
+        <ul class="site-links uc">
+          <li><a href="https://directory.uchicago.edu/">Directory</a></li>
+          <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
+          <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
+          <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
+        </ul>
+        <!--/div>
+      </div-->
+        <!-- End box row -->
+      </div>
+      <!-- End column 3 -->
+
+
+      <div class="col-sm-3 col-md-3 col-lg-3 hidden-print">
+        <ul class="social">
+          <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
+          <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
+          <li><a href="https://youtube.com/#" class="ss-social-circle ss-icon">YouTube</a></li>
+          <li><a href="https://linkedin.com/in/#" class="ss-social-circle ss-icon">LinkedIn</a></li>
+        </ul>
+        {{ page.footer_fourth }}
+      </div>
+      <!-- End Column 4 -->
 
     </div>
-    <!-- End Container-Fluid -->
+    <!-- End Footer Row 1 -->
 
-    <div class="timestamp">
-      {{ page.copyright }}
+    <div class="row">
+      <div class="timestamp">
+        <div class="col-md-12 col-lg-12">{{ page.copyright }}</div>
+      </div>
+      <!-- End Copyright -->
     </div>
-    <!-- End Copyright -->
-  </footer>
-</div>
+    <!-- End Footer Row 2 -->
+
+  </div>
+
+</footer>
+<!-- end Page footer -->

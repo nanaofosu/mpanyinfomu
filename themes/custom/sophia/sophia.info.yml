@@ -1,9 +1,10 @@
 name: Sophia
 type: theme
-description: 'Basic structure for Symptoms to Diagnosis.'
+description: 'Basic structure for Sophia Theme.'
+project: 'Philo-Sophia'
 base theme: false
 libraries:
-  - sophia/bootstrap_cdn
+  - sophia/bootstrap_3
   - sophia/global
   - sophia/uchicago_styling
 regions:
@@ -12,9 +13,11 @@ regions:
   quick_links: 'Quick links Bar Collapse (Menu)'
   search: 'Top Header Search Form'
   wordmark: 'Wordmark'
-  primary_menu: 'Primary (Branding Bar) menu'
-  admin_opigno: 'Admin opigno menu'
+  primary_menu: 'Primary (Branding Bar) Menu'
+  secondary_menu: 'Secondary Site Menu'
   featured_top: 'Featured top'
+  header: Header
+  highlighted: Highlighted
   content: Content
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
@@ -29,11 +32,10 @@ regions:
 disabled:
   header_form: "Header Form"
   help: 'Help'
-  header: Header
   secondary_menu: 'Secondary menu'
-  highlighted: Highlighted
   breadcrumb: Breadcrumb
   featured_bottom_second: 'Featured bottom second'
   featured_bottom_third: 'Featured bottom third'
   footer: 'Footer Wrapper'
+  admin_opigno: 'Admin opigno menu'
 core: '8.x'

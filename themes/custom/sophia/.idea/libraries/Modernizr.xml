@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Modernizr" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="Modernizr" />
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/../../../core/assets/vendor/modernizr" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../core/assets/vendor/modernizr" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

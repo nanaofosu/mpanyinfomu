@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="/usr/lib/php" />
+      <path value="/Applications/DevDesktop/common/pear" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/vendor" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/core" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/modules" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/libraries" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/profiles" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/themes" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/profiles/contrib/opigno_lms" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/themes/contrib/bootstrap_barrio" />
+      <path value="$PROJECT_DIR$/../../../../Barrio Subthemes/symptoms/web/sites/s2d" />
+    </include_path>
+  </component>
+</project>

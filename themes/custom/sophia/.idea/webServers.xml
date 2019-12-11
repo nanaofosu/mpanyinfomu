@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fd988422-29d0-4c03-b0d8-e2c9b6aba32b" name="Sophia Dev" url="http://sophia.uchicago.edu">
+        <fileTransfer host="sophia.uchicago.edu" port="10022" rootFolder="/home/sophia/public_html/sophia/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="10022" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
