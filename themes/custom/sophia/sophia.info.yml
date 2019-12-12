@@ -4,7 +4,7 @@ description: 'Basic structure for Sophia Theme.'
 project: 'Philo-Sophia'
 base theme: false
 libraries:
-  - sophia/bootstrap_3
+  - sophia/bootstrap_4
   - sophia/uchicago_styling
   - sophia/global
 regions:

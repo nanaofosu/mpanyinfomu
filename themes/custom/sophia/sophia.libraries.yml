@@ -30,3 +30,12 @@ bootstrap_3:
     https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js: { type: external, attributes: { integrity: sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd, crossorigin: anonymous} }
   dependencies:
     - core/jquery
+bootstrap_4:
+  css:
+    component:
+      https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css: { attributes: { crossorigin: anonymous } }
+  js:
+    https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js: { type: external, attributes: { integrity: sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6, crossorigin: anonymous} }
+  dependencies:
+    - core/jquery
+    - core/popper
