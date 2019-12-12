@@ -71,10 +71,10 @@
 
   <section id="featured-top" class="container-fluid page">
     <div class="row module">
-      <div class="col-sm-12 col-md-12 col-lg-12 section-title">
+      <div class="col-sm-12 col-md-12 col-lg-12 section-title contextual-region">
         {{ page.featured_top }}
       </div>
-      <div class="container-fluid page">
+      <div class="container-fluid page contextual-region">
         {{ page.opigno_admin }}
       </div>
     </div>
@@ -84,7 +84,7 @@
   <div class="container">
     <div class="row">
       {% if page.content and page.sidebar_first and page.sidebar_second %}
-        <aside class="col-lg-3" role="complementary">
+        <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_first }}
         </aside>
         <main class="col-lg-6 col-md-6 col-sm-6">
@@ -97,11 +97,11 @@
           {{ page.content }}
           <!-- End Page Content -->
         </main>
-        <aside class="col-lg-3" role="complementary">
+        <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_second }}
         </aside>
       {% elseif page.content and page.sidebar_first %}
-        <aside class="col-lg-3" role="complementary">
+        <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_first }}
         </aside>
         <main class="col-lg-9 col-md-9 col-lg-9">

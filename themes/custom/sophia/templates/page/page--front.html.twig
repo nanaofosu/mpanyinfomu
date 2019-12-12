@@ -105,7 +105,7 @@
   <div class="container page">
     <div class="row clearfix">
       {% if page.content and page.sidebar_first and page.sidebar_second %}
-        <aside class="col-lg-3" role="complementary">
+        <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_first }}
         </aside>
 
@@ -119,11 +119,11 @@
           {{ page.content }}
           <!-- End Page Content -->
         </main>
-        <aside class="col-lg-3" role="complementary">
+        <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_second }}
         </aside>
       {% elseif page.content and page.sidebar_first %}
-        <aside class="col-lg-3" role="complementary">
+        <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_first }}
         </aside>
 
