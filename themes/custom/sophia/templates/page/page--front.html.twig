@@ -68,32 +68,7 @@
 
 #}
 <div id="wrapper">
-  <header class="navbar navbar-static-top" id="top">
-    <div class="page">
-      <nav class="topnav navbar-collapse">
-        <div class="container page">
-          <a href="https://www.uchicago.edu/" id="uchicago">The University of Chicago</a>
-          <ul class="nav navbar-nav navbar-right"><li><a href="#" data-toggle="modal" data-target="#quicklinks">Quick Links</a></li><li id="s"><a href="/search/" id="search-trigger" class="ss-icon">Search</a></li></ul>
-          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button></div>
-      </nav>
-      <form id="sitesearch" class="search-bar expanded" method="get" action="/search" role="search">
-        <div class="search-bar-inner">
-          <div class="wrap">
-            <label for="searchtext" class="search-bar-help">Enter Search Below</label>
-            <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search&#8230;">
-            <button type="submit" class="search-submit ss-icon">Search</button>
-          </div>
-        </div>
-      </form>
-      <div class="wordmark" role="navigation"><h1><a href="/">EE Demo Site</a></h1></div>
-    </div>
-    {{ page.primary_menu }}
-  </header>
+  {% include '@sophia/includes/header.html.twig' %}
 
   <div id="quicklinks" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -127,7 +102,7 @@
   </section>
   <!-- End Page Top -->
 
-  <div class="maincontent container-fluid page">
+  <div class="container page">
     <div class="row clearfix">
 
       <div id="sidebar-1" class="col-sm-3 col-md-3 col-lg-3">
@@ -169,68 +144,5 @@
   </section>
   <!-- End Page Bottom First -->
 
-  <footer class="sticky-bottom">
-    <div class="container-fluid">
-      <div class="row">
-
-        <div class="col-sm-3 col-md-3 col-lg-3">
-          {{ page.footer_first }}
-          <a href="https://www.uchicago.edu/" class="uchicago-wordmark">The University of Chicago</a>
-        </div>
-        <!-- End Column 1 -->
-
-        <div class="col-sm-3 col-sm-3 col-md-3">
-          <address>
-            <a href="/"><b>Site Name</b></a><br>
-            The University of Chicago<br>
-            5801 South Ellis Avenue<br>
-            Chicago, IL 60637
-          </address>
-        </div>
-        <!-- End Column 2 -->
-
-        <div class="col-sm-3 col-md-3 col-lg-3">
-          <!--div class="container-inline" -->
-          <!--div class="col-xs-6"-->
-          {{ page.footer_second }}
-          {{ page.footer_third }}
-          <ul class="site-links uc">
-            <li><a href="https://directory.uchicago.edu/">Directory</a></li>
-            <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
-            <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
-            <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
-          </ul>
-          <!--/div>
-        </div-->
-          <!-- End box row -->
-        </div>
-        <!-- End column 3 -->
-
-
-        <div class="col-sm-3 col-md-3 col-lg-3 hidden-print">
-          <ul class="social">
-            <li><a href="https://facebook.com/#" class="ss-social-circle ss-icon">Facebook</a></li>
-            <li><a href="https://twitter.com/#" class="ss-social-circle ss-icon">Twitter</a></li>
-            <li><a href="https://youtube.com/#" class="ss-social-circle ss-icon">YouTube</a></li>
-            <li><a href="https://linkedin.com/in/#" class="ss-social-circle ss-icon">LinkedIn</a></li>
-          </ul>
-          {{ page.footer_fourth }}
-        </div>
-        <!-- End Column 4 -->
-
-      </div>
-      <!-- End Footer Row 1 -->
-
-      <div class="row">
-        <div class="timestamp">
-          <div class="col-md-12 col-lg-12">{{ page.copyright }}</div>
-        </div>
-        <!-- End Copyright -->
-      </div>
-      <!-- End Footer Row 2 -->
-
-    </div>
-
-  </footer>
-  <!-- End Footer -->
+  {% include '@sophia/includes/footer.html.twig' %}
 </div>
