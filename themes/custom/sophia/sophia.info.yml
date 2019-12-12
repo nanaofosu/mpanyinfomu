@@ -5,8 +5,8 @@ project: 'Philo-Sophia'
 base theme: false
 libraries:
   - sophia/global
-  - sophia/bootstrap_3
   - sophia/uchicago_styling
+  - sophia/bootstrap_3
 regions:
   branding: 'Branding'
   quick_links: 'Quick links Bar Collapse (Menu)'
