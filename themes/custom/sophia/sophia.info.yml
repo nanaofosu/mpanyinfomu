@@ -4,9 +4,9 @@ description: 'Basic structure for Sophia Theme.'
 project: 'Philo-Sophia'
 base theme: false
 libraries:
-  - sophia/global
-  - sophia/uchicago_styling
   - sophia/bootstrap_3
+  - sophia/uchicago_styling
+  - sophia/global
 regions:
   branding: 'Branding'
   quick_links: 'Quick links Bar Collapse (Menu)'

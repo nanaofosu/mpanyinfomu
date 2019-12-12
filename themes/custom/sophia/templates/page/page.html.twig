@@ -101,7 +101,7 @@
     <div class="col-sm-12 col-md-12 col-lg-12 section-title">
       {{ page.featured_top }}
     </div>
-    <div class="container-fluid page" role="complementary">
+    <div class="container-fluid page">
 
     </div>
   </div>
@@ -109,46 +109,41 @@
 <!-- End Page Top -->
 
 <div class="maincontent container-fluid">
-  <div class="row clearfix">
+  <div class="row">
     {% if page.sidebar_first and page.content %}
       <div id="sidebar-1" class="col-sm-3 col-md-3 col-lg-3">
-        <aside class="section" role="complementary">
           {{ page.sidebar_first }}
-        </aside>
       </div>
 
       {% if page.content and page.sidebar_second %}
         <main class="col-sm-6 col-md-6 col-lg-6">
-          <section>{{ page.highlighted }}</section>
-          <!-- End Highlighted -->
+          {% if page.highlighted %}
+            {{ page.highlighted }}
+            <!-- End Highlighted -->
+          {% endif %}
 
-          <section class="section">
-            <a id="main-content" tabindex="-1"></a>
-            {{ page.content }}
-          </section>
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.content }}
           <!-- End Page Content -->
         </main>
 
-        <div id="sidebar-2" class="col-sm-3 col-md-3 col-lg-3">
-          <aside class="section" role="complementary">
+        <div class="col-sm-2 col-md-2 col-lg-2">
             {{ page.sidebar_second }}
-          </aside>
         </div>
         <!-- End Page Content -->
       {% else %}
-        <section>{{ page.highlighted }}</section>
-        <!-- End Highlighted -->
+        <main class="col-sm-8 col-md-8 col-lg-8">
+          {% if page.highlighted %}
+            {{ page.highlighted }}
+            <!-- End Highlighted -->
+          {% endif %}
 
-        <main class="col-sm-9 col-md-9 col-lg-9">
-          <section class="section">
             <a id="main-content" tabindex="-1"></a>
             {{ page.content }}
-          </section>
           <!-- End Page Content -->
         </main>
       {% endif %}
     {% endif %}
-
   </div>
   <!-- End Main Content Row  -->
 
