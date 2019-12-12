@@ -65,35 +65,6 @@
  *
  * @see template_preprocess_page()
  */
-
-       <div class="form-inline navbar-form float-right">
-        <ul>
-          <li id="s"><a href="#" id="search-trigger" class="ss-icon">Search</a>{{ page.search }}</li>
-        </ul>
-      </div>
-
-          <nav id="main-navbar" class="collapse navbar-collapse">
-      <a id="mainnav"></a>
-    </nav>
-    <div id="quicklinks" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close hidden-print" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Quick Links</h4>
-      </div>
-      <div class="modal-body">
-        <ul>
-          <li><a href="/about/">About Us</a></li><li><a href="/landing-page/">Landing Page</a></li><li><a href="/about/our-people/">Our People</a></li>
-        </ul>
-      </div>
-      <div class="modal-footer hidden-print">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- End Modal section -->
 #}
 
 
@@ -140,10 +111,9 @@
 <div class="maincontent container">
   <div class="row row-offcanvas row-offcanvas-left clearfix">
     {% if page.sidebar_first and page.content %}
-      <div{{ sidebar_first_attributes }} class="col-sm-3 col-md-3 col-lg-3">
+      <div id="sidebar-1" class="col-sm-3 col-md-3 col-lg-3">
         <aside class="section" role="complementary">
           {{ page.sidebar_first }}
-          <p>sidebar 1</p>
         </aside>
       </div>
 
@@ -159,10 +129,10 @@
           <!-- End Page Content -->
         </main>
 
-        <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
+        <div id="sidebar-2" class="col-sm-3 col-md-3 col-lg-3">
           <aside class="section" role="complementary">
             {{ page.sidebar_second }}
-            <p>sidebar 2</p>
+
           </aside>
         </div>
         <!-- End Page Content -->
@@ -170,7 +140,7 @@
         <section>{{ page.highlighted }}</section>
         <!-- End Highlighted -->
 
-        <main class="col-sm-12 col-md-12 col-lg-12">
+        <main class="col-sm-9 col-md-9 col-lg-9">
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
             {{ page.content }}
@@ -178,35 +148,6 @@
           <!-- End Page Content -->
         </main>
       {% endif %}
-    {% elseif page.content and page_sidebar_second %}
-      <main class="col-sm-9 col-md-9 col-lg-9">
-        <section>{{ page.highlighted }}</section>
-        <!-- End Highlighted -->
-
-        <section class="section">
-          <a id="main-content" tabindex="-1"></a>
-          {{ page.content }}
-        </section>
-        <!-- End Page Content -->
-      </main>
-      <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
-        <aside class="section" role="complementary">
-          {{ page.sidebar_second }}
-          <p>sidebar 2</p>
-        </aside>
-      </div>
-      <!-- End Page Content -->
-    {% else %}
-      <main class="col-sm-12 col-md-12 col-lg-12">
-        <section>{{ page.highlighted }}</section>
-        <!-- End Highlighted -->
-
-        <section class="section">
-          <a id="main-content" tabindex="-1"></a>
-          {{ page.content }}
-        </section>
-        <!-- End Page Content -->
-      </main>
     {% endif %}
 
   </div>

@@ -53,18 +53,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/block" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/block" />
       <recent name="$PROJECT_DIR$/templates/page" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/src/global/sass" />
-      <recent name="$PROJECT_DIR$/src/vita/sass" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -89,7 +89,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576006326214</updated>
-      <workItem from="1576006327711" duration="16973000" />
+      <workItem from="1576006327711" duration="19363000" />
+      <workItem from="1576109198515" duration="180000" />
+      <workItem from="1576109395582" duration="1007000" />
     </task>
     <servers />
   </component>
@@ -109,6 +111,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1161" y="373" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-1440.971.1440.839/0.23.2560.1417@0.23.2560.1417" timestamp="1576006514082" />
+    <state x="408" y="177" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576109362525">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="408" y="177" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1440.971.1440.839/0.23.2560.1417@0.23.2560.1417" timestamp="1576109362525" />
     <state x="791" y="443" key="#com.intellij.tools.ToolEditorDialog" timestamp="1576010074930">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>

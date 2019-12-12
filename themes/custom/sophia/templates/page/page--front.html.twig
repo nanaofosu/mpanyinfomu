@@ -119,86 +119,39 @@
     <div class="row module">
       <div class="col-sm-12 col-md-12 col-lg-12 section-title">
         {{ page.featured_top }}
-      </div>
-      <div class="container-fluid page" role="complementary">
+        <div class="container-fluid page" role="complementary">
 
+        </div>
       </div>
     </div>
   </section>
   <!-- End Page Top -->
 
-  <div class="maincontent container">
-    <div class="row row-offcanvas row-offcanvas-left clearfix">
-      {% if page.sidebar_first and page.content %}
-        <div{{ sidebar_first_attributes }} class="col-sm-3 col-md-3 col-lg-3">
-          <aside class="section" role="complementary">
-            {{ page.sidebar_first }}
-            <p>sidebar 1</p>
-          </aside>
-        </div>
+  <div class="maincontent container-fluid page">
+    <div id="mainrow" class="row clearfix">
 
-        {% if page.content and page.sidebar_second %}
-          <main class="col-sm-6 col-md-6 col-lg-6">
-            <section>{{ page.highlighted }}</section>
-            <!-- End Highlighted -->
+      <div id="sidebar-1" class="col-sm-3 col-md-3 col-lg-3">
+        <aside class="section" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      </div>
 
-            <section class="section">
-              <a id="main-content" tabindex="-1"></a>
-              {{ page.content }}
-            </section>
-            <!-- End Page Content -->
-          </main>
+      <main class="col-sm-6 col-md-6 col-lg-6">
+        <section class="section">{{ page.highlighted }}</section>
+        <!-- End Highlighted -->
 
-          <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
-            <aside class="section" role="complementary">
-              {{ page.sidebar_second }}
-              <p>sidebar 2</p>
-            </aside>
-          </div>
-          <!-- End Page Content -->
-        {% else %}
-          <section>{{ page.highlighted }}</section>
-          <!-- End Highlighted -->
-
-          <main class="col-sm-12 col-md-12 col-lg-12">
-            <section class="section">
-              <a id="main-content" tabindex="-1"></a>
-              {{ page.content }}
-            </section>
-            <!-- End Page Content -->
-          </main>
-        {% endif %}
-      {% elseif page.content and page_sidebar_second %}
-        <main class="col-sm-9 col-md-9 col-lg-9">
-          <section>{{ page.highlighted }}</section>
-          <!-- End Highlighted -->
-
-          <section class="section">
-            <a id="main-content" tabindex="-1"></a>
-            {{ page.content }}
-          </section>
-          <!-- End Page Content -->
-        </main>
-        <div{{ sidebar_second_attributes }} class="col-sm-3 col-lg-3">
-          <aside class="section" role="complementary">
-            {{ page.sidebar_second }}
-            <p>sidebar 2</p>
-          </aside>
-        </div>
+        <section class="section">
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.content }}
+        </section>
         <!-- End Page Content -->
-      {% else %}
-        <main class="col-sm-12 col-md-12 col-lg-12">
-          <section>{{ page.highlighted }}</section>
-          <!-- End Highlighted -->
+      </main>
 
-          <section class="section">
-            <a id="main-content" tabindex="-1"></a>
-            {{ page.content }}
-          </section>
-          <!-- End Page Content -->
-        </main>
-      {% endif %}
-
+      <div id="sidebar-2" class="col-sm-3 col-md-3 col-lg-3">
+        <aside class="section" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      </div>
     </div>
     <!-- End Main Content Row  -->
 
@@ -239,17 +192,17 @@
 
         <div class="col-sm-3 col-md-3 col-lg-3">
           <!--div class="container-inline" -->
-            <!--div class="col-xs-6"-->
-              {{ page.footer_second }}
-              {{ page.footer_third }}
-              <ul class="site-links uc">
-                <li><a href="https://directory.uchicago.edu/">Directory</a></li>
-                <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
-                <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
-                <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
-              </ul>
-            <!--/div>
-          </div-->
+          <!--div class="col-xs-6"-->
+          {{ page.footer_second }}
+          {{ page.footer_third }}
+          <ul class="site-links uc">
+            <li><a href="https://directory.uchicago.edu/">Directory</a></li>
+            <li><a href="https://maps.uchicago.edu/">UChicago Maps</a></li>
+            <li><a href="https://visit.uchicago.edu/">Visiting UChicago</a></li>
+            <li><a href="https://giving.uchicago.edu/site/Donation2?df_id=1681&amp;mfc_pref=T&amp;1681.donation=form1">Make a Gift</a></li>
+          </ul>
+          <!--/div>
+        </div-->
           <!-- End box row -->
         </div>
         <!-- End column 3 -->

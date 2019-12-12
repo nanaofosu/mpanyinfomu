@@ -6,7 +6,9 @@ global:
   js:
     js/global.js: {}
   dependencies:
+    - core/jquery
     - core/jquery.once
+    - core/drupal
 uchicago_styling:
   version: VERSION
   css:
@@ -18,6 +20,7 @@ uchicago_styling:
     js/main-nav.js: {}
     js/site-search.js: {}
   dependencies:
+    - core/jquery
     - core/modernizr
 bootstrap_3:
   css:
@@ -27,4 +30,3 @@ bootstrap_3:
     https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js: { type: external, attributes: { integrity: sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd, crossorigin: anonymous} }
   dependencies:
     - core/jquery
-    - core/drupal
