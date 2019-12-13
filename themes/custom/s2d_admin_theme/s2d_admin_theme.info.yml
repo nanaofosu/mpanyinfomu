@@ -1,0 +1,9 @@
+name: S2D Admin Theme
+type: theme
+description: 'This is the s2d admin theme'
+package: Other
+core: 8.x
+libraries:
+  - s2d_admin_theme/global-styling
+ 
+base theme: seven
