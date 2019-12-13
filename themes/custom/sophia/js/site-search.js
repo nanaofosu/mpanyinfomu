@@ -1,4 +1,4 @@
-(function ($, Modernizr) {
+(function ($, Modernizer) {
 
   // Search field behaviors
   var searchForm		= 'form#sitesearch';

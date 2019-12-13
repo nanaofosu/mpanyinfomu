@@ -1,0 +1,151 @@
+@import "../common/helpers";
+@import "../common/variables";
+
+/* SEARCH BAR
+-------------------------------------------------- */
+#sitesearch {
+	display:none;
+}
+
+.search-bar {
+	display: none;
+	position: relative;
+	height: 75px;
+	*zoom: 1;
+	background:$black;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	input[type=text],
+	button {
+		-webkit-appearance: none;
+		border-radius: 0;
+    outline: none;
+	}
+	.search-bar-inner {
+		position: absolute;
+		bottom: 7px;
+		width: 100%;
+	}
+	.wrap {
+		padding:0 ($grid-gutter-width/2);
+		margin: 0 auto;
+    max-width: 1400px;
+		&:before, &:after {
+			content: " ";
+			display: table;
+		}
+		&:after {
+			clear: both;
+		}
+	}
+	.search-bar-help {
+    @include gotham-medium(0.666666667em);
+    line-height: 1em;
+		display:block;
+		letter-spacing: .05em;
+		color: darken($white, 50%);
+		text-transform: uppercase;
+		padding: 0;
+		margin: 0;
+		z-index: 1;
+		position: relative;
+	}
+	.search-field {
+    @include gotham-extra-light(1.777777778em);
+		border: none;
+		background: transparent;
+		width: 80%;
+		padding: 0;
+		display: block;
+		float: left;
+		color: $white;
+		margin: 0;
+		text-indent: 0;
+		@include font-smoothing(on);
+		&::-webkit-input-placeholder {
+			color: lighten($black, 40%);
+		}
+		&:-moz-placeholder {
+			color: lighten($black, 40%);
+		}
+		&::-moz-placeholder {
+			color: lighten($black, 40%);
+		}
+		&:-ms-input-placeholder {
+			color: lighten($black, 40%);
+		}
+	}
+	.search-submit {
+		background-color: transparent;
+		color: $white;
+		border: 0;
+		font-size: 2.111111111em;
+		text-shadow: none;
+		float: right;
+		padding: 0;
+		margin-top: 0;
+		z-index: 2;
+		height: 1.125em;
+		line-height:1.3em;
+		transition:opacity ease-in-out .3s;
+		animation: searchpulse 1.25s infinite alternate ease-in-out;
+		&:hover,
+    &:focus {
+			outline: none;
+			border: none;
+			opacity: .2;
+			cursor: pointer;
+		}
+		&:disabled {
+			opacity:.5;
+			cursor: default;
+			animation-name: none;
+			border:none;
+		}
+	}
+		@keyframes searchpulse {
+	  0% {opacity:.5}
+	  20% {opacity:.6}
+	  40% {opacity:.7}
+	  60% {opacity:.8}
+	  80% {opacity:.9}
+	  100% {opacity:1}
+	}
+	&.disabled {
+		.search-submit {
+			cursor: default;
+			opacity:.2;
+		}
+	}
+}
+
+// No JS fallbacks
+.no-js {
+  .topnav {
+    ul {
+      li {
+        display: none;
+      }
+    }
+  }
+  #sitesearch {
+    display:block;
+  }
+}
+
+/* placeholder text */
+.lt-ie10 {
+	input[type="text"] {
+		height: 12px;
+		padding: 6px;
+	}
+	/* fallback placeholder */
+	.placeholder {
+		color: lighten($black, 40%);
+	}
+}
