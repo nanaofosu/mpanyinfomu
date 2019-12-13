@@ -1,20 +1,22 @@
 name: Sophia
 type: theme
-description: 'Basic structure for Symptoms to Diagnosis.'
+description: 'Basic structure for Sophia Theme.'
+project: 'Philo-Sophia'
 base theme: false
 libraries:
-  - sophia/bootstrap_cdn
-  - sophia/global
+  - sophia/bootstrap_4
   - sophia/uchicago_styling
+  - sophia/global
 regions:
-  ribbon: 'University of Chicago Ribbon'
   branding: 'Branding'
   quick_links: 'Quick links Bar Collapse (Menu)'
   search: 'Top Header Search Form'
   wordmark: 'Wordmark'
-  primary_menu: 'Primary (Branding Bar) menu'
+  primary_menu: 'Primary (Branding Bar) Menu'
+  secondary_menu: 'Secondary Site Menu'
   admin_opigno: 'Admin opigno menu'
   featured_top: 'Featured top'
+  header: Header
   content: Content
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
@@ -24,16 +26,16 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   copyright: 'Copyright'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
 disabled:
+  ribbon: 'University of Chicago Ribbon'
   header_form: "Header Form"
   help: 'Help'
-  header: Header
   secondary_menu: 'Secondary menu'
-  highlighted: Highlighted
   breadcrumb: Breadcrumb
   featured_bottom_second: 'Featured bottom second'
   featured_bottom_third: 'Featured bottom third'
   footer: 'Footer Wrapper'
+  highlighted: Highlighted
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
 core: '8.x'

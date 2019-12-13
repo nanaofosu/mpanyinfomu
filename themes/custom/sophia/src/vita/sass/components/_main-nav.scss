@@ -1,0 +1,173 @@
+//@import "libs/helper-classes.css.scss";
+//@import "libs/variables.css.scss";
+
+#main-navbar {
+  @include font-smoothing(off);
+  @include gotham-light($font-base-size * 1.125);
+  background-color: lighten($lightest-gray, 5%);
+  border-top: 1px solid darken($lightest-gray, 5%);
+  border-bottom: 1px solid darken($lightest-gray, 5%);
+  a {
+    display:inline;
+  }
+  ul {
+    width: 100%;
+    float: none;
+    margin-top: ($grid-gutter-width/2);
+    margin-bottom: ($grid-gutter-width/2);
+    padding:0;
+    @media (min-width: $screen-md-min) {
+      margin: 0 auto;
+      display: flex;
+      flex: 1;
+      max-width: $max-width;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    > li {
+      list-style-type: none;
+      float: none;
+      @media (min-width: $screen-md-min) {
+        display: flex;
+        flex:1;
+      }
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .72222222em;
+        color: $site-color;
+        background-color: lighten($lightest-gray, 5%);
+        border-bottom: 4px solid lighten($lightest-gray, 5%);;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: ($grid-gutter-width/2);
+        padding-bottom: ($grid-gutter-width/2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: $screen-md-min) {
+          font-size: 0.6999999999999em;
+          flex: 1;
+        }
+        @media (min-width: $screen-md-min) and (max-height: 850px) {
+          font-size: 0.666666667em;
+      	}
+        &:focus,
+        &:hover {
+          color: $site-color;
+          border-bottom: 4px solid darken($lightest-gray, 5%);
+        }
+      }
+      &.dropdown-active,
+      &.here,
+      &.parent-here {
+        a {
+          font-weight: $medium;
+          color: $site-color;
+          border-bottom: 4px solid $site-color;
+        }
+      }
+
+      &.here,
+      &.parent-here {
+        .dropdown-menu {
+          display: none!important;
+        }
+      }
+    }
+  }
+
+  .no-js & {
+    ul {
+      li {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.navbar-collapse {
+    overflow-x: visible;
+    padding-right: $navbar-padding-horizontal;
+    padding-left:  $navbar-padding-horizontal;
+    //@extend &(.clearfix all);
+    //&:extend(.clearfix all);
+    -webkit-overflow-scrolling: touch;
+
+    &.in {
+      overflow-y: auto;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      width: auto;
+      &.collapse {
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0; // Override default setting
+        overflow: visible !important;
+      }
+
+      &.in {
+        overflow-y: visible;
+      }
+
+      // Undo the collapse side padding for navbars with containers to ensure
+      // alignment of right-aligned contents.
+      .navbar-fixed-top &,
+      .navbar-static-top &,
+      .navbar-fixed-bottom & {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+}
+
+// Transitions
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-property($transition-property) {
+  -webkit-transition-property: $transition-property;
+          transition-property: $transition-property;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+@mixin transition-timing-function($timing-function) {
+  -webkit-transition-timing-function: $timing-function;
+          transition-timing-function: $timing-function;
+}
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+
+.collapse {
+  display: none;
+
+  &.in      { display: block; }
+//  tr&.in    { display: table-row; }
+//  tbody&.in { display: table-row-group; }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition-property("height, visibility");
+  @include transition-duration(.35s);
+  @include transition-timing-function(ease);
+}

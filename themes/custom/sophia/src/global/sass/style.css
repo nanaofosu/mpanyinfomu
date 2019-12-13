@@ -1,0 +1,19 @@
+body #wrapper header .topnav > div {
+  padding: 0; }
+body #wrapper header nav.topnav.navbar {
+  padding: 0; }
+@media (max-width: 991px) {
+  body #wrapper header #main-navbar ul {
+    flex-direction: column; } }
+@media (min-width: 992px) {
+  body #wrapper header #main-navbar ul {
+    flex-direction: row; } }
+body #wrapper header #main-navbar.navbar {
+  padding: 0; }
+
+body .facets-widget-checkbox ul {
+  text-align: left; }
+  body .facets-widget-checkbox ul li.facet-item {
+    list-style: none; }
+
+/*# sourceMappingURL=style.css.map */

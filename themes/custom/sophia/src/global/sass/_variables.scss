@@ -1,0 +1,87 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         darken(#428bca, 6.5%); // #337ab7
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+
+// COLORS
+// UChicago Identity Colors
+// http://communications.uchicago.edu/identity/color-palette
+// --------------------------------------------------
+
+// Primary Colors:
+$maroon:								rgba(128,0,0,1);			//#800000
+$darkest-gray:					rgba(54,54,54,1); 		//#363636
+$darker-gray:						rgba(77,77,77,1);			//#4d4d4d
+$dark-gray:             rgba(118,118,118,1);	//#767676
+$light-gray:            rgba(214,214,206,1);	//#D6D6CE
+$lightest-gray:					rgba(237,237,237,1); 	//#ededed
+$gold: 									rgba(137,97,55,1);		//#896137
+
+// Secondary Colors:
+$white:                 rgba(255,255,255,1);	//#FFFFFF
+$black:                	rgba(0,0,0,1);				//#000000
+
+$yellow:                rgba(248,164,41,1);		//#FFA319
+$yellow-light:					rgba(249,182,78,1);		//#FFB547
+$yellow-dark:						rgba(198,130,32,1);		//#CC8214
+
+$orange:                rgba(193,102,34,1);		//#C16622
+$orange-light:					rgba(211,147,99,1);		//#D49464
+$orange-dark:						rgba(154,83,36,1);		//#9A5324
+
+$red:										rgba(143,57,49,1);		//#8F3931
+$red-light:							rgba(186,123,118,1);	//#B1746F
+$red-dark:							rgba(100,40,34,1);		//#642822
+
+$light-green:						rgba(145,171,90,1);		//#8A9045
+$light-green-light:			rgba(174,177,126,1);	//#ADB17D
+$light-green-dark:			rgba(101,109,51,1);		//#616530
+
+$dark-green:						rgba(88,89,63,1);			//#58593F
+$dark-green-light:			rgba(140,144,127,1);	//#8A8B79
+$dark-green-dark:				rgba(70,72,51,1);			//#3E3E23
+
+$blue:									rgba(21,95,131,1);		//#155F83
+$blue-light:						rgba(91,150,173,1);		//#5B8FA8
+$blue-dark:							rgba(21,67,95,1);			//#0F425C
+
+$violet:								rgba(53,14,32,1);			//#350E20
+$violet-light:					rgba(114,86,99,1);		//#725663
+
+// Background color for `<body>`.
+$body-bg:               $white;
+
+// Global text color on `<body>`.
+$text-color:            $darker-gray;
+
+// Global textual link color.
+$link-color:            $red;
+
+// Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%);
+
+$site-color: 						$maroon;
+
+//== Pagination
+$pagination-color:                     $link-color;
+$pagination-hover-color:               $link-hover-color;
+$pagination-active-bg:                 $site-color;
+$pagination-active-border:             $site-color;

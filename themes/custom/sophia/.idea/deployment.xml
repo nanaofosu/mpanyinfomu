@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Sophia Dev" deleteMissingItems="true" createEmptyFolders="true">
+    <serverData>
+      <paths name="Sophia Dev">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/web/themes/custom/sophia" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
