@@ -11,23 +11,22 @@ html {
           nav#brandbar { background-color: #800000; color: white;}
         }
 
-        section {
+        section#featured-top, section#featured-bottom {
           background: white;
-          #featured-top,
-          #featured-bottom {margin: 1em 0; text-align: center;}
+          margin: 2em 0;
+          text-align: center;
         }
 
-        div{
-
-          .maincontent{
-            background: white;
-          }
+        div#main-region {
+          background: white;
           div {
             main {
               background: white;
               padding: 1em 0;
-              margin: 1em 0;}
+              //margin: 1em 0;
+            }
           }
+          aside { padding: 1em 0;}
         }
 
         footer {
@@ -45,6 +44,7 @@ html {
           }
 
         }
+
       }
 
     }

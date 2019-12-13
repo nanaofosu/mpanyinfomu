@@ -1,0 +1,154 @@
+//@import "../flexboxgrid/css/flexboxgrid.css";
+@import "../common/helpers";
+@import "../common/icons";
+@import "../common/variables";
+
+//------------------------------------------------------------------//
+// 	FOOTER
+//------------------------------------------------------------------//
+
+footer {
+	@include font-smoothing(off);
+  @include gotham-light($font-base-size * 1.125);
+	background: darken($darker-gray, 5%);
+	@include font-smoothing(on);
+	> .container-fluid  {
+		max-width: 1430px;
+		> .row {
+			@include row-padding;
+		}
+	}
+	a {
+		text-decoration: none;
+		b {
+			font-weight: $medium;
+		}
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			color:$white;
+		}
+	}
+
+	a.uchicago-wordmark {
+		background: transparent url('#{$cf-shared}uchicago_wordmark.svg') 0 0 no-repeat;
+		background-size: contain;
+		display: block;
+		width:100%;
+		height: 0;
+		padding-bottom:20%;
+		opacity: .75;
+		overflow: hidden;
+		text-indent: -9999em;
+		transition: opacity 0.3s ease-in-out;
+		margin:0 0 $grid-gutter-width 0;
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+		@media (min-width: $screen-md-min) {
+			margin:0
+		}
+	}
+
+	p, address, a  {
+		color: $light-gray;
+		line-height: 1.75em;
+		font-style: normal;
+		margin:0;
+	}
+	p, address, ul {
+		font-size: 0.666666667em;
+		font-weight: $book;
+		@media (min-width: $screen-md-min) {
+			font-weight: $light;
+
+		}
+	}
+	address {
+		text-align: center;
+		@media (min-width: $screen-md-min) {
+			text-align: left;
+		}
+	}
+	address,
+	p.footer-bug {
+		margin:0 0 $grid-gutter-width 0;
+		@media (min-width: $screen-md-min) {
+			margin:0
+		}
+	}
+	a {
+		transition: color 0.3s ease-in-out;
+		&:hover,
+		&:focus {
+			color:$white;
+		}
+	}
+
+	ul.site-links {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		line-height: 1.75em;
+		text-align: right;
+		@media (min-width: $screen-md-min) {
+			text-align: left;
+		}
+		li {
+			margin-bottom:.5em;
+			&:last-child {
+				margin-bottom:0;
+			}
+			span {
+				display:none;
+				visibility: hidden;
+				@media (min-width: $screen-sm-min) {
+					display:inline;
+					visibility: visible;
+				}
+			}
+		}
+		&.uc {
+			font-weight: $medium;
+			text-align: left;
+		}
+	}
+	ul.social {
+		font-size: 1.222222222em;
+		margin: $grid-gutter-width 0 0 -.5rem;
+		padding:0;
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		@media (min-width: $screen-md-min) {
+			margin-top:0;
+			justify-content: flex-start;
+		}
+		li {
+			display:flex;
+			margin:.5rem;
+			a {
+				color: $light-gray!important;
+				line-height: 1.22222222em;
+				flex:1;
+				&:hover,
+				&:focus {
+					color: $white!important;
+				}
+			}
+		}
+	}
+
+	.timestamp {
+		border-top: 1px solid darken($darker-gray, 10%);
+		p {
+			border-top: 1px solid $darker-gray;
+			margin:0 auto;
+			padding: ($grid-gutter-width/2) 0;
+			text-align: center;
+			line-height: 1em;
+			font-weight: $light;
+		}
+	}
+}
