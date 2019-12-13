@@ -39,6 +39,18 @@ body #wrapper header nav.topnav.navbar {
 body #wrapper header #main-navbar.navbar {
   padding: 0; }
 
+body #block-sophia-content {
+  padding: 1rem; }
+  @media (max-width: 931px) {
+    body #block-sophia-content div.col-sm-3, body #block-sophia-content div.col-sm-4, body #block-sophia-content div.col-sm-5 {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem; }
+    body #block-sophia-content div.col-sm-4 span {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem; } }
+body span.field-item div.row.item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
 body .facets-widget-checkbox ul {
   text-align: left; }
   body .facets-widget-checkbox ul li.facet-item {
