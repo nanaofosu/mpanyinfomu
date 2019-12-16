@@ -1,0 +1,17 @@
+.facets-widget-checkbox{
+  ul{
+    list-style: none;
+    padding-inline-start: 5px;
+    li{
+      margin-bottom: unset;
+    }
+  }
+  input[type=checkbox]{
+    margin-right: 1em;
+  }
+  label{
+    color: $primary;
+    text-transform: capitalize;
+    margin-bottom: unset;
+  }
+}

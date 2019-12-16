@@ -1,0 +1,124 @@
+
+ // Gotham stuff
+
+ // @import "https://cloud.typography.com/6526092/7344352/css/fonts.css";
+
+
+
+ /* Gotham Bold */
+ @font-face {
+     font-family: "Gotham SSm A", "Gotham SSm B";
+     font-style: normal;
+     font-weight: 700;
+ }
+
+ /* Gotham Medium */
+ @font-face {
+     font-family: "Gotham SSm A", "Gotham SSm B";
+     font-style: normal;
+     font-weight: 500;
+ }
+
+ /* Gotham Book */
+ @font-face {
+     font-family: "Gotham SSm A", "Gotham SSm B";
+     font-style: normal;
+     font-weight: 400;
+ }
+
+ /* Gotham Light */
+ @font-face {
+     font-family: "Gotham SSm A", "Gotham SSm B";
+     font-style: normal;
+     font-weight: 300;
+ }
+
+ /* Gotham Extra Light */
+ @font-face {
+     font-family: "Gotham SSm A", "Gotham SSm B";
+     font-style: normal;
+     font-weight: 200;
+ }
+
+ $gotham: 'Gotham SSm A', 'Gotham SSm B', HelveticaNeue, 'Helvetica Neue', HelveticaNeueRoman, 'HelveticaNeue-Roman', 'Helvetica Neue Roman', TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+
+ $bold: 700;
+ $medium: 500;
+ $book: 400;
+ $light: 300;
+ $extra-light: 200;
+
+ @mixin gotham-bold {
+     font-family: $gotham;
+     font-weight: $bold;
+ }
+
+ @mixin gotham-medium {
+     font-family: $gotham;
+     font-weight: $medium;
+ }
+ @mixin gotham-book {
+     font-family: $gotham;
+     font-weight: $book;
+ }
+ @mixin gotham-light {
+     font-family: $gotham;
+     font-weight: $light;
+ }
+ @mixin gotham-extra-light {
+     font-family: $gotham;
+     font-weight: $extra-light;
+ }
+
+ h1, h2, h3, h4, h5, h6{
+	@include gotham-light;
+	margin: 0 0 .75em;
+ }
+
+/* Header sizes */
+h1 {
+  font-size: 36px;
+}
+h2 {font-size: 32px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 18px;}
+
+/** set base font size small so text is easy to read on small devices
+then bump it up when the viewport is larger
+typography across the site should scale to this value using ems **/
+
+body, div, span, aside, section, header {
+    font-size: 16px;
+    line-height: 1.85em;
+    @include gotham-extra-light;
+
+}
+
+p, p:last-child {margin-bottom: 1.25em;}
+
+/* Until further notice*/
+//em {font-style: oblique;}
+
+p, ul li, ol li {line-height: 1.85em;}
+
+a, a:active, a:focus{
+    color: $primary;
+    transition: all .25s ease-out;
+    text-decoration: none;
+    @include gotham-light;
+
+    &:hover{
+    	color: $primary;
+        text-decoration: underline;
+        transition: all .25s ease-out;
+    }
+}
+
+
+
+
+ol, ul {
+	li {margin-bottom: .5em;}
+}

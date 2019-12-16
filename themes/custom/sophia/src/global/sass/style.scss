@@ -1,5 +1,5 @@
-@import "variables";
+/* Importing all sass files */
 
+@import 'partials/allpartials';
+@import 'regions/allregions';
 @import "page";
-@import "navbar-bs-fix";
-@import "facets";

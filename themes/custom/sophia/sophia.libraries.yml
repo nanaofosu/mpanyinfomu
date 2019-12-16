@@ -2,7 +2,7 @@ global:
   version: VERSION
   css:
     theme:
-      src/global/sass/style.css: {}
+      css/style.css: {}
   js:
     js/global.js: {}
 
@@ -15,14 +15,6 @@ uchicago_styling:
   js:
     js/base.js: {}
     js/main-nav.js: {}
-  dependencies:
-    - core/jquery
-bootstrap_3:
-  css:
-    component:
-      https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css: { attributes: { crossorigin: anonymous } }
-  js:
-    https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js: { type: external, attributes: { integrity: sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd, crossorigin: anonymous} }
   dependencies:
     - core/jquery
 bootstrap_4:

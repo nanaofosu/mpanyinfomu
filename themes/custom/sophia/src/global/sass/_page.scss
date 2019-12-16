@@ -1,53 +1,42 @@
-html {
-  body {
-    background: darken($darker-gray, 5%);
+#main-region {
+  margin-top: 30px;
+}
+//page title
 
-    div {
-      #wrapper {background: white;}
+.page-title {
+  font-size: 28px;
+  color: $primary;
+  font-weight: 200;
 
-      div {
-
-        header{
-          nav#brandbar { background-color: #800000; color: white;}
-        }
-
-        section#featured-top, section#featured-bottom {
-          background: white;
-          margin: 2em 0;
-          text-align: center;
-        }
-
-        div#main-region {
-          background: white;
-          div {
-            main {
-              background: white;
-              padding: 1em 0;
-              //margin: 1em 0;
-            }
-          }
-          aside { padding: 1em 0;}
-        }
-
-        footer {
-          background: darken($darker-gray, 5%);
-          bottom: 0;
-          .container-fluid {
-            .row {
-              background: darken($darker-gray, 5%);
-
-              @media (min-width: 992px) {
-                padding-bottom: 1em;
-                padding-top: 2em;
-              }
-            }
-          }
-
-        }
-
-      }
-
+  span {
+    &.quickedit-field {
+      font-size: 28px;
+      color: $primary;
+      font-weight: 200;
     }
   }
+}
 
+.container {
+  @media(min-width: 1200px) {
+    max-width: 1430px;
+  }
+}
+
+/* For Facet Search page*/
+.view-s2d-faceted-search {
+  .asset-icon {
+    align-self: center;
+  }
+
+  .badge {
+    border-radius: 1rem;
+    font-weight: 400;
+    padding: 0 1em;
+    line-height: unset;
+
+    &.badge-secondary {
+      background: $secondary;
+    }
+  }
 }

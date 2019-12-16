@@ -1,0 +1,29 @@
+.topnav {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  > div {
+    padding: 5px;
+  }
+}
+
+#main-navbar {
+  ul {
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+
+    > li {
+      margin-bottom: 0;
+
+      > a {
+        padding: 0;
+        line-height: 4em;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

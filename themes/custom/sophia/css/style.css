@@ -1,0 +1,143 @@
+/* Importing all sass files */
+/*This file is for gathering all partials into one file*/
+/* Gotham Bold */
+@font-face {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 700; }
+/* Gotham Medium */
+@font-face {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500; }
+/* Gotham Book */
+@font-face {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 400; }
+/* Gotham Light */
+@font-face {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 300; }
+/* Gotham Extra Light */
+@font-face {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 200; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gotham SSm A", "Gotham SSm B", HelveticaNeue, "Helvetica Neue", HelveticaNeueRoman, "HelveticaNeue-Roman", "Helvetica Neue Roman", TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  font-weight: 300;
+  margin: 0 0 .75em; }
+
+/* Header sizes */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 32px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 24px; }
+
+h5 {
+  font-size: 20px; }
+
+h6 {
+  font-size: 18px; }
+
+/** set base font size small so text is easy to read on small devices
+then bump it up when the viewport is larger
+typography across the site should scale to this value using ems **/
+body, div, span, aside, section, header {
+  font-size: 16px;
+  line-height: 1.85em;
+  font-family: "Gotham SSm A", "Gotham SSm B", HelveticaNeue, "Helvetica Neue", HelveticaNeueRoman, "HelveticaNeue-Roman", "Helvetica Neue Roman", TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  font-weight: 200; }
+
+p, p:last-child {
+  margin-bottom: 1.25em; }
+
+/* Until further notice*/
+p, ul li, ol li {
+  line-height: 1.85em; }
+
+a, a:active, a:focus {
+  color: #8f3931;
+  transition: all .25s ease-out;
+  text-decoration: none;
+  font-family: "Gotham SSm A", "Gotham SSm B", HelveticaNeue, "Helvetica Neue", HelveticaNeueRoman, "HelveticaNeue-Roman", "Helvetica Neue Roman", TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+  font-weight: 300; }
+  a:hover, a:active:hover, a:focus:hover {
+    color: #8f3931;
+    text-decoration: underline;
+    transition: all .25s ease-out; }
+
+ol li, ul li {
+  margin-bottom: .5em; }
+
+.facets-widget-checkbox ul {
+  list-style: none;
+  padding-inline-start: 5px; }
+  .facets-widget-checkbox ul li {
+    margin-bottom: unset; }
+.facets-widget-checkbox input[type=checkbox] {
+  margin-right: 1em; }
+.facets-widget-checkbox label {
+  color: #8f3931;
+  text-transform: capitalize;
+  margin-bottom: unset; }
+
+.block h3 {
+  font-size: 1.33em; }
+
+.topnav {
+  padding-top: 0;
+  padding-bottom: 0; }
+  .topnav > div {
+    padding: 5px; }
+
+@media (max-width: 991px) {
+  #main-navbar ul {
+    flex-direction: column; } }
+@media (max-width: 991px) {
+  #main-navbar ul {
+    flex-direction: column; } }
+#main-navbar ul > li {
+  margin-bottom: 0; }
+  #main-navbar ul > li > a {
+    padding: 0;
+    line-height: 4em;
+    font-size: 0.8em; }
+
+#main-region {
+  margin-top: 30px; }
+
+.page-title {
+  font-size: 28px;
+  color: #8f3931;
+  font-weight: 200; }
+  .page-title span.quickedit-field {
+    font-size: 28px;
+    color: #8f3931;
+    font-weight: 200; }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1430px; } }
+
+/* For Facet Search page*/
+.view-s2d-faceted-search .asset-icon {
+  align-self: center; }
+.view-s2d-faceted-search .badge {
+  border-radius: 1rem;
+  font-weight: 400;
+  padding: 0 1em;
+  line-height: unset; }
+  .view-s2d-faceted-search .badge.badge-secondary {
+    background: #ba7b76; }
+
+/*# sourceMappingURL=style.css.map */
