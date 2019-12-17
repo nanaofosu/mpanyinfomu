@@ -132,12 +132,13 @@ ol li, ul li {
 /* For Facet Search page*/
 .view-s2d-faceted-search .asset-icon {
   align-self: center; }
-.view-s2d-faceted-search .badge {
+
+.badge {
   border-radius: 1rem;
   font-weight: 400;
   padding: 0 1em;
   line-height: unset; }
-  .view-s2d-faceted-search .badge.badge-secondary {
+  .badge.badge-secondary {
     background: #ba7b76; }
 
 /*# sourceMappingURL=style.css.map */
