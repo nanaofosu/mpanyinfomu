@@ -16,7 +16,8 @@
         "drupal/bootstrap_barrio": "^4.22",
         "drupal/devel": "^2.1",
         "drupal/facets": "^1.4",
-        "drupal/fontawesome": "^2.14"
+        "drupal/fontawesome": "^2.14",
+        "drupal/paragraphs": "^1.10"
     },
     "replace": {
         "drupal/core": "^8.7"
