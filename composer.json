@@ -17,7 +17,8 @@
         "drupal/devel": "^2.1",
         "drupal/facets": "^1.4",
         "drupal/fontawesome": "^2.14",
-        "drupal/paragraphs": "^1.10"
+        "drupal/paragraphs": "^1.10",
+        "drupal/entity_legal": "^2.0"
     },
     "replace": {
         "drupal/core": "^8.7"
