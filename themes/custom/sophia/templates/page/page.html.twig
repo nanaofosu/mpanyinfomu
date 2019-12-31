@@ -100,6 +100,21 @@
         <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_second }}
         </aside>
+      {% elseif page.content and page.sidebar_second %}
+        <main class="col-lg-9 col-md-9 col-lg-9">
+          {% if page.header %}
+            {{ page.header }}
+            <!-- End Highlighted -->
+          {% endif %}
+
+          <a id="main-content" tabindex="-1"></a>
+          {{ page.content }}
+          <!-- End Page Content -->
+        </main>
+
+        <aside class="col-lg-3 contextual-region" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
       {% elseif page.content and page.sidebar_first %}
         <aside class="col-lg-3 contextual-region" role="complementary">
           {{ page.sidebar_first }}
