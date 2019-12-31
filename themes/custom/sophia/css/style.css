@@ -166,4 +166,37 @@ ol li, ul li {
   .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row:hover .icon {
     color: maroon; }
 
+.user-logged-in.path-user .user-info {
+  display: flex;
+  background: unset; }
+  .user-logged-in.path-user .user-info .user-info-photo-wrapper {
+    border-right: 1px solid #777777; }
+  .user-logged-in.path-user .user-info .user-info-name {
+    color: #8f3931;
+    background: unset; }
+    .user-logged-in.path-user .user-info .user-info-name::before {
+      content: "User Name: "; }
+  .user-logged-in.path-user .user-info .user-info-email {
+    color: #8f3931;
+    background: unset; }
+    .user-logged-in.path-user .user-info .user-info-email::before {
+      content: "Email: "; }
+.user-logged-in .statistics-table {
+  width: 100%; }
+  .user-logged-in .statistics-table thead {
+    border-bottom: 1px solid #777777; }
+    .user-logged-in .statistics-table thead th {
+      background-color: transparent;
+      color: #8f3931;
+      text-align: left;
+      padding-left: 1em;
+      font-style: normal; }
+  .user-logged-in .statistics-table tbody .training td {
+    padding: 0.5em; }
+.user-logged-in .trainings-list tbody tr.training-active {
+  background-color: maroon !important;
+  line-height: 3em; }
+  .user-logged-in .trainings-list tbody tr.training-active td {
+    padding-left: 4em; }
+
 /*# sourceMappingURL=style.css.map */
