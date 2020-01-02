@@ -265,6 +265,35 @@ function sophia_theme_suggestions_form_alter(array &$suggestions, array $variabl
   }
 }
 
+//nana
+function sophia_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+kint($form);
+}
+
+function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+  unset($form['module_media_image']);
+}
+function sophia_form_group_learning_path_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+  unset($form['field_certificate']);
+  unset($form['field_requires_validation']);
+  unset($form['field_required_trainings']);
+  unset($form['field_learning_path_enable_forum']);
+  unset($form['field_learning_path_visibility']['widget']['#options']['semiprivate']);
+  unset($form['field_learning_path_duration']);
+  unset($form['field_learning_path_media_image']);
+}
+/* Customizing the add group form */
+function sophia_form_group_learning_path_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+
+  unset($form['field_certificate']);
+  unset($form['field_requires_validation']);
+  unset($form['field_required_trainings']);
+  unset($form['field_learning_path_enable_forum']);
+  unset($form['field_learning_path_visibility']['widget']['#options']['semiprivate']);
+  unset($form['field_learning_path_duration']);
+  unset($form['field_learning_path_media_image']);
+}
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
  */
