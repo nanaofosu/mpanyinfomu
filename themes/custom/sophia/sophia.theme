@@ -266,12 +266,27 @@ function sophia_theme_suggestions_form_alter(array &$suggestions, array $variabl
 }
 
 //nana
-function sophia_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
-kint($form);
-}
+// function sophia_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+//
+// }
 
 function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+
   unset($form['module_media_image']);
+  //removing evenrything badge
+  unset($form['badge_active']);
+  unset($form['badge_name']);
+  unset($form['badge_description']);
+  unset($form['badge_criteria']);
+  unset($form['badge_media_image']);
+  unset($form['opigno_badges_settings']);
+
+  //removing evenrything Skills
+  unset($form['skills_active']);
+  unset($form['opigno_skills_settings']);
+  unset($form['module_global']);
+
+  // kint($form);
 }
 function sophia_form_group_learning_path_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
   unset($form['field_certificate']);
