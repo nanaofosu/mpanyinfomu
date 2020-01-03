@@ -2,4 +2,12 @@
 
 @import 'partials/allpartials';
 @import 'regions/allregions';
-@import "page";
+@import "pages/all_pages";
+
+
+.kint {
+    font-size: 13px;
+    margin: 8px 0;
+    overflow-x: unset;
+    white-space: nowrap;
+}

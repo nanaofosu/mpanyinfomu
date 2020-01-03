@@ -1,0 +1,66 @@
+.user-logged-in {
+  &.path-user {
+    .user-info {
+      display: flex;
+      background: unset;
+
+      .user-info-photo-wrapper {
+        width: 200px;
+
+        .user-info-photo {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      .user-info-name {
+        &::before {
+          content: "User Name: ";
+        }
+        color: $primary;
+        background: unset;
+      }
+
+      .user-info-email {
+        &::before {
+          content: "Email: ";
+        }
+        color: $primary;
+        background: unset;
+      }
+    }
+  }
+
+  .statistics-table {
+    width: 100%;
+
+    thead {
+      border-bottom: 1px solid $gray-light;
+
+      th {
+        background-color: transparent;
+        color: $primary;
+        text-align: left;
+        padding-left: 1em;
+        font-style: normal;
+      }
+    }
+
+    tbody {
+      .training {
+        td {
+          padding: 0.5em;
+        }
+      }
+    }
+  }
+
+  .trainings-list tbody tr.training-active {
+    background-color: $maroon !important;
+    line-height: 3em;
+
+    td {
+      padding-left: 4em;
+    }
+  }
+}

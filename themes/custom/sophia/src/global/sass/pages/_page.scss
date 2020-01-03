@@ -1,0 +1,103 @@
+#main-region {
+  margin-top: 30px;
+}
+
+//buttons
+.btn{
+  &.btn-primary {
+      color: #fff;
+      background-color: $primary;
+      border-color: $primary;
+  }
+}
+
+.button{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1 solid transparent;
+
+  &.button--primary {
+      color: #fff;
+      background-color: $primary;
+      border-color: $primary;
+  }
+}
+
+//page title
+
+.page-title {
+  font-size: 38px;
+  color: $primary;
+  font-weight: 200;
+
+  span {
+    font-size: 38px;
+    color: $primary;
+    font-weight: 200;
+  }
+}
+
+.container {
+  @media(min-width: 1200px) {
+    max-width: 1430px;
+  }
+}
+/* For Facet Search page*/
+.view-s2d-faceted-search {
+  .asset-icon {
+    align-self: center;
+  }
+}
+
+.badge {
+  border-radius: 1rem;
+  font-weight: 400;
+  padding: 0 1em;
+  line-height: unset;
+
+  &.badge-secondary {
+    background: $secondary;
+  }
+}
+/* .asset-detail-page */
+.asset-detail-page {
+  #block-views-block-s2d-asset-details-block-2,
+  #block-views-block-s2d-asset-details-block-3 {
+    .view-content {
+      .views-row {
+        max-width: 300px;
+        border-radius: 5px;
+        padding: 1em;
+        min-height: 200px;
+        text-align: center;
+        box-shadow: 1px 1px 3px 1px #e0e0e0;
+        border: 1px solid $gray-lighter;
+        margin: 1em;
+
+        .similar-assets {
+          .name {
+            font-weight: 400;
+          }
+
+          .classification {
+            font-weight: 400;
+          }
+
+          .icon {
+            margin-bottom: 1em;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+
+        &:hover {
+          .icon {
+            color: $maroon;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.step-list-top {
+  margin-top: 5px;
+
+  li {
+    .number {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border: 2px dashed;
+      border-radius: 100%;
+      color: $primary;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 70px;
+      font-weight: 700;
+      height: 100px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      line-height: 1;
+      width: 100px;
+    }
+
+    &.active {
+      .number {
+        color: $white;
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+body.admin-learning-path.toolbar-horizontal.toolbar-tray-open .lateral-panel {
+  top: 79px;
+}
+
+body.admin-learning-path .activity-add,
+body.admin-learning-path .entity-add.add {
+  width: 390px;
+  left: auto;
+}
+
+body.admin-learning-path .lateral-panel {
+  padding: 2rem;
+  -webkit-box-shadow: 0 0 20px 2px rgba(0,0,0,.2);
+  box-shadow: 0 0 20px 2px rgba(0,0,0,.2);
+}
+
+body.admin-learning-path .activity-add.add .step-1 .mat-radio-button,
+body.admin-learning-path .entity-add.add .step-1 .mat-radio-button {
+  border-left: 2px solid $primary;
+  background-color: #f8f7f5;
+  color: #585857;
+}
+
+body.admin-learning-path .activity-add.add .step-1,
+body.admin-learning-path .entity-add.add .step-1 {
+  margin-left: -2rem;
+}
+
+body.admin-learning-path .activity-add.add .step-1 .mat-radio-button+.mat-radio-button,
+body.admin-learning-path .entity-add.add .step-1 .mat-radio-button+.mat-radio-button {
+  margin-top: 5px;
+}
+
+.mat-radio-outer-circle {
+  box-sizing: border-box;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: border-color ease 280ms;
+  width: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+body.admin-learning-path .mat-radio-outer-circle {
+  border-radius: 0;
+  border-color: #f8f7f5;
+  background-color: #f8f7f5;
+}
+
+body.admin-learning-path .activity-add.add .step-2 button,
+body.admin-learning-path .entity-add.add .step-2 button {
+  width: 100%;
+  text-align: left;
+  border: unset;
+  background: #e0e0e0;
+  border-left: 2px solid $primary;
+  padding: 0.75rem 2rem;
+}
+
+body.admin-learning-path .activity-add.add .step-2 input[type=text],
+body.admin-learning-path .entity-add.add .step-2 input[type=text] {
+  background-color: #f8f7f5;
+  border: 0;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  background-position: right 1rem center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+}
+
+body.admin-learning-path .lateral-panel .info {
+  padding: 0 2rem 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  border-bottom: 1px solid;
+  margin-bottom: 47px;
+  position: relative;
+
+  h2 {
+    font-size: 24px;
+
+    span {
+      font-size: 24px;
+    }
+  }
+}
+
+.form-select {
+  height: 30px;
+  min-width: 250px;
+  border: 1px solid #e0e0e0;
+}
