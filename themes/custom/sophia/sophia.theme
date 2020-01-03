@@ -281,10 +281,24 @@ function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStat
   unset($form['badge_media_image']);
   unset($form['opigno_badges_settings']);
 
-  //removing evenrything Skills
+  //removing everything Skills
   unset($form['skills_active']);
   unset($form['opigno_skills_settings']);
   unset($form['module_global']);
+
+  //removing everything taking options
+  // unset($form['opigno_module_taking_options']); //takinng options fieldset
+  unset($form['allow_resume']);
+  unset($form['backwards_navigation']);
+  unset($form['randomization']);
+  unset($form['random_activities']);
+  unset($form['takes']);
+  unset($form['hide_results']);
+  unset($form['opigno_module_taking_options']); //taking options
+  unset($form['keep_results']); //Store results
+  unset($form['show_attempt_stats']); //Display the allowed number of attempts on the starting page for this Module
+
+  // unset($form['backwards_navigation']);
 
   // kint($form);
 }

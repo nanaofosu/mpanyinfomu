@@ -116,6 +116,23 @@ ol li, ul li {
 #main-region {
   margin-top: 30px; }
 
+.btn.btn-primary {
+  color: #fff;
+  background-color: #8f3931;
+  border-color: #8f3931; }
+
+.button {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1 solid transparent; }
+  .button.button--primary {
+    color: #fff;
+    background-color: #8f3931;
+    border-color: #8f3931; }
+
 .page-title {
   font-size: 38px;
   color: #8f3931;
@@ -161,7 +178,7 @@ ol li, ul li {
   .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row .similar-assets .icon,
   .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .icon {
     margin-bottom: 1em;
-    transition: all .5s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row:hover .icon,
   .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row:hover .icon {
     color: maroon; }
