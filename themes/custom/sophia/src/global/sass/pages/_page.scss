@@ -2,16 +2,39 @@
   margin-top: 30px;
 }
 
-//buttons
-.btn{
-  &.btn-primary {
-      color: #fff;
-      background-color: $primary;
-      border-color: $primary;
+.user-login-link {
+  color: #ffffff;
+}
+
+.user-logged-in {
+  .user-login-link {
+    display: none;
+  }
+  .user-account-span{
+    display: block;
   }
 }
 
-.button{
+.user-account-span{
+  display: none;
+    a{
+      color: #ffffff;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+}
+//buttons
+
+.btn {
+  &.btn-primary {
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.button {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -20,14 +43,12 @@
   border: 1 solid transparent;
 
   &.button--primary {
-      color: #fff;
-      background-color: $primary;
-      border-color: $primary;
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
   }
 }
-
 //page title
-
 .page-title {
   font-size: 38px;
   color: $primary;

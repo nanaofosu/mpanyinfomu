@@ -1,29 +1,51 @@
 <header>
-    <nav class="container-fluid topnav navbar navbar-collapse">
-      <div class="container">
+  <nav class="container-fluid topnav navbar navbar-collapse">
+    <div class="container">
       <a class="" href="https://www.uchicago.edu/" id="uchicago">The University of Chicago</a>
-      <ul class="nav navbar-nav navbar-right">
+      <!-- <ul class="nav navbar-nav navbar-right"> <li id="s"> <a href="/search/" id="search-trigger" class="ss-icon">Search</a> </li> </ul> -->
 
-        <li id="s"><a href="/search/" id="search-trigger" class="ss-icon">Search</a></li>
-      </ul>
+      <!-- Start Browse button -->
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="browseSymptomDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Browse
+        </a>
+        <div class="dropdown-menu" aria-labelledby="browseSymptomDropdownMenuLink">
+          {{ drupal_view('s2d_dashboard', 'block_1') }}
+        </div>
+      </div>
+      <!-- End Browse button -->
+
+      <a class="user-login-link" href="/user">Log in</a>
+      <span class="user-account-span">
+        <a href="/user" class="d-flex">
+          <span class="">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="d-none d-md-block ml-3">My account</span>
+        </a>
+      </span>
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+    </div>
+  </nav>
+  <form id="sitesearch" class="search-bar expanded" method="get" action="/search" role="search">
+    <div class="search-bar-inner">
+      <div class="wrap">
+        <label for="searchtext" class="search-bar-help">Enter Search Below</label>
+        <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="on" placeholder="Search&#8230;">
+        <button type="submit" class="search-submit ss-icon">Search</button>
       </div>
-    </nav>
-    <form id="sitesearch" class="search-bar expanded" method="get" action="/search" role="search">
-      <div class="search-bar-inner">
-        <div class="wrap">
-          <label for="searchtext" class="search-bar-help">Enter Search Below</label>
-          <input type="text" name="q" id="searchtext" class="search-field" value="" autocomplete="on" placeholder="Search&#8230;">
-          <button type="submit" class="search-submit ss-icon">Search</button>
-        </div>
-      </div>
-    </form>
-    <div class="wordmark" role="navigation"><h1><a href="/">Syncope</a></h1></div>
-    {{ page.primary_menu }}
+    </div>
+  </form>
+  <div class="wordmark" role="navigation">
+    <h1>
+      <a href="/">Syncope</a>
+    </h1>
+  </div>
+  {{ page.primary_menu }}
 </header>
 <!-- Header section -->

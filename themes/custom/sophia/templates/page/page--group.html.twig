@@ -45,13 +45,14 @@
  * @ingroup themeable
  */
 #}
-<div class="layout-container">
-
-  <header role="banner">
+<!-- <div class="layout-container"> -->
+<div id="wrapper" class="{{logged_in}}">
+  {% include '@sophia/includes/header.html.twig' %}
+  <div class="container">
     {{ page.header }}
-  </header>
-
-  {{ page.primary_menu }}
+  </div>
+  
+  {# page.primary_menu #}
 {#page.secondary_menu #}
 
   {{ page.breadcrumb }}
@@ -80,13 +81,7 @@
     {% endif %}
 
   </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
+{% include '@sophia/includes/footer.html.twig' %}
 </div>{# /.layout-container #}
 
 {{ join_group_form }}

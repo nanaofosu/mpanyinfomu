@@ -4015,6 +4015,63 @@
         }
     },
     {
+        "name": "drupal/twig_tweak",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/twig_tweak.git",
+            "reference": "8.x-2.4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-2.4.zip",
+            "reference": "8.x-2.4",
+            "shasum": "fa175b46d2b69ce0f30344579a5861169c8467a4"
+        },
+        "require": {
+            "drupal/core": "^8.7"
+        },
+        "suggest": {
+            "symfony/var-dumper": "Better dump() function for debugging Twig variables"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-2.x": "2.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-2.4",
+                "datestamp": "1563099329",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Chi",
+                "homepage": "https://www.drupal.org/user/556138"
+            }
+        ],
+        "description": "A Twig extension with some useful functions and filters for Drupal development.",
+        "homepage": "https://www.drupal.org/project/twig_tweak",
+        "keywords": [
+            "Drupal",
+            "Twig"
+        ],
+        "support": {
+            "source": "https://git.drupalcode.org/project/twig_tweak",
+            "issues": "https://www.drupal.org/project/issues/twig_tweak"
+        }
+    },
+    {
         "name": "drush/drush",
         "version": "10.0.2",
         "version_normalized": "10.0.2.0",
@@ -9838,7 +9895,8 @@
             "http",
             "psr",
             "psr-7"
-        ]
+        ],
+        "abandoned": "laminas/laminas-diactoros"
     },
     {
         "name": "zendframework/zend-escaper",
@@ -9885,7 +9943,8 @@
             "ZendFramework",
             "escaper",
             "zf"
-        ]
+        ],
+        "abandoned": "laminas/laminas-escaper"
     },
     {
         "name": "zendframework/zend-feed",
@@ -9950,7 +10009,8 @@
             "ZendFramework",
             "feed",
             "zf"
-        ]
+        ],
+        "abandoned": "laminas/laminas-feed"
     },
     {
         "name": "zendframework/zend-stdlib",
@@ -9998,6 +10058,7 @@
             "ZendFramework",
             "stdlib",
             "zf"
-        ]
+        ],
+        "abandoned": "laminas/laminas-stdlib"
     }
 ]

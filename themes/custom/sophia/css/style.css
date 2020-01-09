@@ -117,6 +117,21 @@ ol li, ul li {
 #main-region {
   margin-top: 30px; }
 
+.user-login-link {
+  color: #ffffff; }
+
+.user-logged-in .user-login-link {
+  display: none; }
+.user-logged-in .user-account-span {
+  display: block; }
+
+.user-account-span {
+  display: none; }
+  .user-account-span a {
+    color: #ffffff; }
+    .user-account-span a:hover {
+      text-decoration: none; }
+
 .btn.btn-primary {
   color: #fff;
   background-color: #8f3931;
