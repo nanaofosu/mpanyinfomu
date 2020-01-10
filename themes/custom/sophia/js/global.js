@@ -31,6 +31,15 @@
         }
       });
 
+      //get the quick edit field type
+      $("div").each(function(index) {
+        if (!$(this).attr('class')) { //check that this is a div with no class name
+          if (Date.parse($(this).html())) { //check that the value of the html can be parsed as a date.
+            $(this).remove();
+          }
+        }
+      });
+
 
     }
   };
