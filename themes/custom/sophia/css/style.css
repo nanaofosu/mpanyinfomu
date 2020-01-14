@@ -230,7 +230,8 @@ ol li, ul li {
 
 /* .asset-detail-page */
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row,
-.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row {
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row,
+.asset-detail-page #more-about-sympton .view-content .views-row {
   max-width: 300px;
   border-radius: 5px;
   padding: 1em;
@@ -241,20 +242,24 @@ ol li, ul li {
   margin: 1em;
 }
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row .similar-assets .name,
-.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .name {
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .name,
+.asset-detail-page #more-about-sympton .view-content .views-row .similar-assets .name {
   font-weight: 400;
 }
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row .similar-assets .classification,
-.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .classification {
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .classification,
+.asset-detail-page #more-about-sympton .view-content .views-row .similar-assets .classification {
   font-weight: 400;
 }
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row .similar-assets .icon,
-.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .icon {
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .icon,
+.asset-detail-page #more-about-sympton .view-content .views-row .similar-assets .icon {
   margin-bottom: 1em;
   transition: all 0.5s ease-in-out;
 }
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row:hover .icon,
-.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row:hover .icon {
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row:hover .icon,
+.asset-detail-page #more-about-sympton .view-content .views-row:hover .icon {
   color: maroon;
 }
 

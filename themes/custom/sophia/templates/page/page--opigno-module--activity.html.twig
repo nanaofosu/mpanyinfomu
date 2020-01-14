@@ -46,6 +46,10 @@
  */
 
 #}
+{#
+  Setting some variables to be used.
+#}
+{% set number_of_assets_in_symptom = drupal_view_result('s2d_asset_details', 'block_2')|length %}
 
 
 <div id="wrapper">
@@ -133,6 +137,11 @@
     </div>
     <!-- End Main Content Row  -->
 
+    {% if number_of_assets_in_symptom > 0 %}
+      <div id="more-about-sympton">
+        {{ drupal_view('s2d_asset_details', 'block_2') }}
+      </div>
+    {% endif %}
   </div>
   <!-- End Main content container -->
 

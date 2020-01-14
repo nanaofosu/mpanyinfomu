@@ -25,8 +25,8 @@
       /* Removing unwanted asset types under "More [Asset] on Asset detail page"*/
       //get the asset name for the above variable assetType
       //check the asset type is equal to this asset type, if not remove the closest parent div
-      $(".view-display-id-block_3 .similar-assets .classification").each(function( index) {
-        if($(this).text().toLowerCase() != assetType.toLowerCase()){
+      $(".view-display-id-block_3 .similar-assets .classification").each(function(index) {
+        if ($(this).text().toLowerCase() != assetType.toLowerCase()) {
           $(this).closest('.views-row').remove();
         }
       });
