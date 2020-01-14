@@ -50,6 +50,7 @@
   Setting some variables to be used.
 #}
 {% set number_of_assets_in_symptom = drupal_view_result('s2d_asset_details', 'block_2')|length %}
+  {% set number_of_assets_in_symptom = drupal_view_result('s2d_asset_details', 'block_2')|length %}
 
 
 <div id="wrapper">
@@ -88,6 +89,19 @@
   <!-- End Page Top -->
 
   <div id="main-region" class="container asset-detail-page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item" aria-current="page">
+          <a id="breadcrumb-link" href="#">[Breadcrumb]</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          {{page['#title']}}
+        </li>
+      </ol>
+    </nav>
     <div class="row clearfix">
       {% if page.content and page.sidebar_first and page.sidebar_second %}
         <aside class="col-lg-3 contextual-region" role="complementary">
@@ -102,6 +116,7 @@
 
           <a id="main-content" tabindex="-1"></a>
           {{ page.content }}
+
           <!-- End Page Content -->
         </main>
         <aside class="col-lg-3 contextual-region" role="complementary">

@@ -40,6 +40,9 @@
         }
       });
 
+      /*  Seting breadcrumb in asset detail page  */
+      $('.asset-detail-page #breadcrumb-link').text(symptomName);
+      $('.asset-detail-page #breadcrumb-link').attr('href', '/browse-symptoms?f[0]=symptom_association_group_title:'+symptomName.toLowerCase());
 
     }
   };
