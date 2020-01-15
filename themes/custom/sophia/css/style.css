@@ -229,10 +229,23 @@ ol li, ul li {
 }
 
 /* .asset-detail-page */
+.asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content,
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content,
+.asset-detail-page #more-about-sympton .view-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content,
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content,
+.asset-detail-page #more-about-sympton .view-content {
+    justify-content: center;
+  }
+}
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row,
 .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row,
 .asset-detail-page #more-about-sympton .view-content .views-row {
-  max-width: 300px;
+  width: 300px;
   border-radius: 5px;
   padding: 1em;
   min-height: 200px;

@@ -89,8 +89,13 @@
   #block-views-block-s2d-asset-details-block-3,
   #more-about-sympton {
     .view-content {
+      display: flex;
+      flex-wrap: wrap;
+      @media (max-width: 767px){
+        justify-content: center;
+      }
       .views-row {
-        max-width: 300px;
+        width: 300px;
         border-radius: 5px;
         padding: 1em;
         min-height: 200px;
