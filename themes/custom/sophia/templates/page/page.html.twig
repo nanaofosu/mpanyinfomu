@@ -84,7 +84,7 @@
   <div id="main-region" class="container">
     <div class="row">
       {% if page.content and page.sidebar_first and page.sidebar_second %}
-        <aside class="col-lg-3 contextual-region" role="complementary">
+        <aside class="col-lg-3 contextual-region sidebar-first" role="complementary">
           {{ page.sidebar_first }}
         </aside>
         <main class="col-lg-6 col-md-6 col-sm-6">
@@ -112,11 +112,11 @@
           <!-- End Page Content -->
         </main>
 
-        <aside class="col-lg-3 contextual-region" role="complementary">
+        <aside class="col-lg-3 contextual-region sidebar-first" role="complementary">
           {{ page.sidebar_first }}
         </aside>
       {% elseif page.content and page.sidebar_first %}
-        <aside class="col-lg-3 contextual-region" role="complementary">
+        <aside class="col-lg-3 contextual-region sidebar-first" role="complementary">
           {{ page.sidebar_first }}
         </aside>
         <main class="col-lg-9 col-md-9 col-lg-9">
