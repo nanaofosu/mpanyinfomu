@@ -48,6 +48,8 @@
       $('.asset-detail-page #more-about-sympton .more-link a').text("View All " + symptomName + " Content");
       $('.asset-detail-page #more-about-sympton .more-link a').attr('href', '/browse-symptoms?f[0]=symptom_association_group_title:'+symptomName.toLowerCase());
 
+      /*  Setting H2 in asset detail page "More about Symptom"  */
+      $('.asset-detail-page ##more-about-sympton h2 ').text("More about "+ symptomName);
 
     }
   };
