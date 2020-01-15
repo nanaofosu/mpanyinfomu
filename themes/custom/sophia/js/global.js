@@ -44,6 +44,11 @@
       $('.asset-detail-page #breadcrumb-link').text(symptomName);
       $('.asset-detail-page #breadcrumb-link').attr('href', '/browse-symptoms?f[0]=symptom_association_group_title:'+symptomName.toLowerCase());
 
+      /*  Setting more link value */
+      $('.asset-detail-page #more-about-sympton .more-link a').text("View All " + symptomName + " Content");
+      $('.asset-detail-page #more-about-sympton .more-link a').attr('href', '/browse-symptoms?f[0]=symptom_association_group_title:'+symptomName.toLowerCase());
+
+
     }
   };
 
