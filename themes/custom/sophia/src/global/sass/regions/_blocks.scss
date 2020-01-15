@@ -4,22 +4,8 @@
   }
 }
 
-// .site-owner-menu{
-//   background: $black;
-//   a{
-//     color: $white;
-//   }
-//   ul{
-//     padding: 0;
-//     .menu-item--expanded{
-//       ul{
-//         display: none;
-//       }
-//       &:hover{
-//         ul{
-//           display: inline-block;
-//         }
-//       }
-//     }
-//   }
-// }
+.sidebar-first{
+  .block{
+    margin-bottom: 2em;
+  }
+}
