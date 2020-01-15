@@ -229,6 +229,17 @@ ol li, ul li {
 }
 
 /* .asset-detail-page */
+.asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-display-id-more_about_symptom,
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-display-id-more_about_symptom,
+.asset-detail-page #more-about-sympton .view-display-id-more_about_symptom {
+  display: flex;
+}
+.asset-detail-page #block-views-block-s2d-asset-details-block-2 .more-link,
+.asset-detail-page #block-views-block-s2d-asset-details-block-3 .more-link,
+.asset-detail-page #more-about-sympton .more-link {
+  width: 250px;
+  align-self: center;
+}
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content,
 .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content,
 .asset-detail-page #more-about-sympton .view-content {
@@ -245,7 +256,7 @@ ol li, ul li {
 .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row,
 .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row,
 .asset-detail-page #more-about-sympton .view-content .views-row {
-  width: 300px;
+  width: 250px;
   border-radius: 5px;
   padding: 1em;
   min-height: 200px;
