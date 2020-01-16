@@ -124,6 +124,9 @@ ol li, ul li {
 select.facets-dropdown {
   text-transform: capitalize;
 }
+select.facets-dropdown option {
+  text-transform: capitalize;
+}
 
 .topnav {
   padding-top: 0;

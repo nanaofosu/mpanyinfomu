@@ -13,5 +13,8 @@
 select{
   &.facets-dropdown{
     text-transform: capitalize;
+    option{
+      text-transform: capitalize;
+    }
   }
 }
