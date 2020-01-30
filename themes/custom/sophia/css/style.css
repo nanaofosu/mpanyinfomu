@@ -481,4 +481,15 @@ body.admin-learning-path .lateral-panel .info h2 span {
   white-space: nowrap;
 }
 
+.wordmark h1 a {
+  display: block;
+  text-indent: -9999em;
+  width: 470px;
+  height: auto;
+  padding-bottom: 13.753384073%;
+  margin: 0 auto;
+  background: url("/sites/default/files/UofCLowerLeft.png") no-repeat;
+  background-size: 470PX auto;
+}
+
 /*# sourceMappingURL=style.css.map */
