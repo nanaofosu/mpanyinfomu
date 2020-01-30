@@ -1,24 +1,22 @@
 /* Importing all sass files */
-
 @import 'partials/allpartials';
 @import 'regions/allregions';
 @import "pages/all_pages";
 
 .kint {
-    font-size: 13px;
-    margin: 8px 0;
-    overflow-x: unset;
-    white-space: nowrap;
+  font-size: 13px;
+  margin: 8px 0;
+  overflow-x: unset;
+  white-space: nowrap;
 }
-
 //to be redone
 .wordmark h1 a {
   display: block;
   text-indent: -9999em;
-  width: 470px;
+  width: auto;
   height: auto;
   padding-bottom: 13.753384073%;
   margin: 0 auto;
   background: url("/sites/default/files/UofCLowerLeft.png") no-repeat;
-  background-size: 470PX auto;
+  background-size: contain;
 }

@@ -312,6 +312,15 @@ select.facets-dropdown option {
 .asset-detail-page input[value=Next] {
   display: none;
 }
+.asset-detail-page .view-display-id-asset_series .view-content {
+  padding: 2em 0;
+}
+.asset-detail-page .view-display-id-asset_series .view-content .views-row .series-item {
+  padding: 0.5em;
+}
+.asset-detail-page .view-display-id-asset_series .view-content .views-row:nth-child(odd) .series-item {
+  background-color: #e0e0e0;
+}
 
 .step-list-top {
   margin-top: 5px;
@@ -496,12 +505,12 @@ body.admin-learning-path .lateral-panel .info h2 span {
 .wordmark h1 a {
   display: block;
   text-indent: -9999em;
-  width: 470px;
+  width: auto;
   height: auto;
   padding-bottom: 13.753384073%;
   margin: 0 auto;
   background: url("/sites/default/files/UofCLowerLeft.png") no-repeat;
-  background-size: 470PX auto;
+  background-size: contain;
 }
 
 /*# sourceMappingURL=style.css.map */
