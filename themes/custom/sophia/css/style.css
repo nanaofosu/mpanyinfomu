@@ -236,6 +236,10 @@ select.facets-dropdown option {
 .view-s2d-faceted-search .asset-icon {
   align-self: center;
 }
+.view-s2d-faceted-search .view-content h3 {
+  background: #d6d6ce;
+  padding: 0.4em;
+}
 
 .badge {
   border-radius: 1rem;

@@ -71,6 +71,12 @@
   .asset-icon {
     align-self: center;
   }
+  .view-content{
+    h3{
+      background: $light-gray;
+    padding: .4em;
+    }
+  }
 }
 
 .badge {
