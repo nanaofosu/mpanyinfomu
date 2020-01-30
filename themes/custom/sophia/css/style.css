@@ -161,6 +161,14 @@ select.facets-dropdown option {
   font-size: 0.8em;
 }
 
+#browseSymptomDropdownMenuLink {
+  visibility: hidden;
+}
+
+.user-logged-in #browseSymptomDropdownMenuLink {
+  visibility: unset;
+}
+
 /*This file is for gathering all partials into one file*/
 #main-region {
   margin-top: 30px;

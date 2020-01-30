@@ -19,7 +19,8 @@
         "drupal/fontawesome": "^2.14",
         "drupal/paragraphs": "^1.10",
         "drupal/entity_legal": "^2.0",
-        "drupal/twig_tweak": "^2.4"
+        "drupal/twig_tweak": "^2.4",
+        "drupal/rules": "^3.0",
         "drupal/front": "^1.0"
     },
     "replace": {

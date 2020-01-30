@@ -36,3 +36,12 @@
     }
   }
 }
+
+#browseSymptomDropdownMenuLink{
+  visibility: hidden;
+}
+.user-logged-in{
+  #browseSymptomDropdownMenuLink{
+    visibility: unset;
+  }
+}
