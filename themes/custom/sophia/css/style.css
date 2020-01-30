@@ -297,6 +297,9 @@ select.facets-dropdown option {
 .asset-detail-page #more-about-sympton .view-content .views-row:hover .icon {
   color: maroon;
 }
+.asset-detail-page input[value=Next] {
+  display: none;
+}
 
 .step-list-top {
   margin-top: 5px;

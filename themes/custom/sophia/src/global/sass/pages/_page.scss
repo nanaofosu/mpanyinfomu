@@ -134,4 +134,9 @@
       }
     }
   }
+
+  //Hiding the next button on the asset detail page
+  input[value="Next"]{
+    display: none;
+  }
 }
