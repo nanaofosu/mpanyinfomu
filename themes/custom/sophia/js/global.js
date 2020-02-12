@@ -51,6 +51,15 @@
       /*  Setting H2 in asset detail page "More about Symptom"  */
       $('.asset-detail-page #more-about-sympton h2').text("More about "+ symptomName);
 
+      /* Deleting unwanted series items*/
+      let seriesName = $(".view-s2d-asset-details.view-display-id-block_1 .views-field-field-series .field-content").text().trim();
+      if(seriesName == "no-series"){
+        $(".view-id-s2d_asset_details.view-display-id-asset_series").remove();
+        $(".view-s2d-asset-details.view-display-id-block_1 .views-field-field-series .field-content").remove();
+      }else{
+        $(".view-s2d-asset-details.view-display-id-block_1 .views-field-field-series .field-content").remove();
+      }
+
     }
   };
 

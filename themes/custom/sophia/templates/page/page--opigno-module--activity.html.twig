@@ -151,6 +151,11 @@
       {% endif %}
     </div>
     <!-- End Main Content Row  -->
+
+    <div class="more-in-series">
+      {{drupal_view('s2d_asset_details', 'asset_series')}}
+    </div>
+    
     {% if number_of_assets_in_symptom > 0 %}
       <div id="more-about-sympton">
         <h2>More about [Symptom]</h2>
