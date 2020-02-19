@@ -21,7 +21,8 @@
         "drupal/entity_legal": "^2.0",
         "drupal/twig_tweak": "^2.4",
         "drupal/rules": "^3.0",
-        "drupal/front": "^1.0"
+        "drupal/front": "^1.0",
+        "drupal/admin_toolbar": "^2.0"
     },
     "replace": {
         "drupal/core": "^8.7"
