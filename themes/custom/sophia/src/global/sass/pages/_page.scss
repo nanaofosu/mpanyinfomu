@@ -145,4 +145,28 @@
   input[value="Next"]{
     display: none;
   }
+
+  .view-display-id-asset_series{
+    .view-content{
+      padding: 2em 0;
+      .views-row{
+        .series-item{
+          padding: .5em;
+        }
+        &:nth-child(odd){
+          .series-item{
+            background-color: #e0e0e0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.toolbar-menu-administration{
+  ul{
+    li{
+      margin-bottom: 0em;
+    }
+  }
 }
