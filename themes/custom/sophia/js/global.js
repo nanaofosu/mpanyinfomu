@@ -63,5 +63,6 @@
     }
   };
 
+  $(".field--name-name input").attr('maxlength','120');
 
 })(jQuery, Drupal);
