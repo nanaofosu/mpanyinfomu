@@ -262,7 +262,8 @@ select.facets-dropdown {
 
 a.tabledrag-handle .handle {
   width: auto;
-  height: auto; }
+  height: auto;
+  margin: 0em .5em 0em; }
 
 .step-list-top {
   margin-top: 5px; }
