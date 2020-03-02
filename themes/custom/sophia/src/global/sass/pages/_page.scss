@@ -170,3 +170,22 @@
     }
   }
 }
+
+// Fixing the look of the Contact form
+.path-contact{
+  form{
+    .form-item{
+      margin: 1em 0px;
+    }
+    label{
+      display: block;
+    }
+  }
+}
+
+// fixing
+a.tabledrag-handle .handle {
+    width: auto;
+    height: auto;
+    margin: 0em .5em 0em;
+  }
