@@ -255,6 +255,15 @@ select.facets-dropdown {
 .toolbar-menu-administration ul li {
   margin-bottom: 0em; }
 
+.path-contact form .form-item {
+  margin: 1em 0px; }
+.path-contact form label {
+  display: block; }
+
+a.tabledrag-handle .handle {
+  width: auto;
+  height: auto; }
+
 .step-list-top {
   margin-top: 5px; }
   .step-list-top li .number {
