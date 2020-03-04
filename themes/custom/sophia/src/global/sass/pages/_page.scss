@@ -10,19 +10,22 @@
   .user-login-link {
     display: none;
   }
-  .user-account-span{
+
+  .user-account-span {
     display: block;
   }
 }
 
-.user-account-span{
+.user-account-span {
   display: none;
-    a{
-      color: #ffffff;
-      &:hover{
-        text-decoration: none;
-      }
+
+  a {
+    color: #ffffff;
+
+    &:hover {
+      text-decoration: none;
     }
+  }
 }
 //buttons
 
@@ -49,6 +52,7 @@
   }
 }
 //page title
+
 .page-title {
   font-size: 38px;
   color: $primary;
@@ -71,10 +75,11 @@
   .asset-icon {
     align-self: center;
   }
-  .view-content{
-    h3{
+
+  .view-content {
+    h3 {
       background: #e0e0e0;
-    padding: .4em;
+      padding: 0.4em;
     }
   }
 }
@@ -94,19 +99,22 @@
   #block-views-block-s2d-asset-details-block-2,
   #block-views-block-s2d-asset-details-block-3,
   #more-about-sympton {
-    .view-display-id-more_about_symptom{
+    .view-display-id-more_about_symptom {
       display: flex;
     }
-    .more-link{
+
+    .more-link {
       width: 250px;
-    align-self: center;
+      align-self: center;
     }
+
     .view-content {
       display: flex;
       flex-wrap: wrap;
-      @media (max-width: 767px){
+      @media (max-width: 767px) {
         justify-content: center;
       }
+
       .views-row {
         width: 250px;
         border-radius: 5px;
@@ -140,21 +148,22 @@
       }
     }
   }
-
   //Hiding the next button on the asset detail page
-  input[value="Next"]{
+  input[value="Next"] {
     display: none;
   }
 
-  .view-display-id-asset_series{
-    .view-content{
+  .view-display-id-asset_series {
+    .view-content {
       padding: 2em 0;
-      .views-row{
-        .series-item{
-          padding: .5em;
+
+      .views-row {
+        .series-item {
+          padding: 0.5em;
         }
-        &:nth-child(odd){
-          .series-item{
+
+        &:nth-child(odd) {
+          .series-item {
             background-color: #e0e0e0;
           }
         }
@@ -163,29 +172,79 @@
   }
 }
 
-.toolbar-menu-administration{
-  ul{
-    li{
-      margin-bottom: 0em;
+.toolbar-menu-administration {
+  ul {
+    li {
+      margin-bottom: 0;
     }
   }
 }
-
 // Fixing the look of the Contact form
-.path-contact{
-  form{
-    .form-item{
-      margin: 1em 0px;
+
+.path-contact {
+  form {
+    .form-item {
+      margin: 1em 0;
     }
-    label{
+
+    label {
       display: block;
     }
   }
 }
-
 // fixing
+
 a.tabledrag-handle .handle {
-    width: auto;
-    height: auto;
-    margin: 0em .5em 0em;
+  width: auto;
+  height: auto;
+  margin: 0 0.5em;
+}
+
+footer {
+  .wordmark-wrap {
+    width: 100%;
+    max-width: 370px;
+    margin: 0 auto;
   }
+
+  ul {
+    &.site-links {
+      &.uc {
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+  .marcus-foundation-wordmark{
+    background: transparent url(../Marcus_Lower_Right_2_.png) 0 0 no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 20%;
+    opacity: .75;
+    overflow: hidden;
+    text-indent: -9999em;
+    transition: opacity 0.3s ease-in-out;
+    margin: 0 0 30px 0;
+  }
+}
+
+footer a:not(.soc):not(.uchicago-wordmark):not(.ss-icon):not(.marcus-foundation-wordmark) {
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  color: #fff;
+  opacity: 0.8;
+}
+
+footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):hover, footer a:not(.soc):not(.marcus-foundation-wordmark):not(.uchicago-wordmark):focus {
+    color: #fff;
+    opacity: 1;
+}
+
+footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focus, footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):hover {
+    text-decoration: none;
+    border-bottom: 1px solid #e6e6e6;
+}

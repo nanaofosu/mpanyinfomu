@@ -185,7 +185,7 @@ select.facets-dropdown {
   align-self: center; }
 .view-s2d-faceted-search .view-content h3 {
   background: #e0e0e0;
-  padding: .4em; }
+  padding: 0.4em; }
 
 .badge {
   border-radius: 1rem;
@@ -248,22 +248,58 @@ select.facets-dropdown {
 .asset-detail-page .view-display-id-asset_series .view-content {
   padding: 2em 0; }
   .asset-detail-page .view-display-id-asset_series .view-content .views-row .series-item {
-    padding: .5em; }
+    padding: 0.5em; }
   .asset-detail-page .view-display-id-asset_series .view-content .views-row:nth-child(odd) .series-item {
     background-color: #e0e0e0; }
 
 .toolbar-menu-administration ul li {
-  margin-bottom: 0em; }
+  margin-bottom: 0; }
 
 .path-contact form .form-item {
-  margin: 1em 0px; }
+  margin: 1em 0; }
 .path-contact form label {
   display: block; }
 
 a.tabledrag-handle .handle {
   width: auto;
   height: auto;
-  margin: 0em .5em 0em; }
+  margin: 0 0.5em; }
+
+footer .wordmark-wrap {
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto; }
+footer ul.site-links.uc {
+  font-weight: 500;
+  text-align: center; }
+footer .marcus-foundation-wordmark {
+  background: transparent url(../Marcus_Lower_Right_2_.png) 0 0 no-repeat;
+  background-size: contain;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 20%;
+  opacity: .75;
+  overflow: hidden;
+  text-indent: -9999em;
+  transition: opacity 0.3s ease-in-out;
+  margin: 0 0 30px 0; }
+
+footer a:not(.soc):not(.uchicago-wordmark):not(.ss-icon):not(.marcus-foundation-wordmark) {
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  color: #fff;
+  opacity: 0.8; }
+
+footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):hover, footer a:not(.soc):not(.marcus-foundation-wordmark):not(.uchicago-wordmark):focus {
+  color: #fff;
+  opacity: 1; }
+
+footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focus, footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):hover {
+  text-decoration: none;
+  border-bottom: 1px solid #e6e6e6; }
 
 .step-list-top {
   margin-top: 5px; }
