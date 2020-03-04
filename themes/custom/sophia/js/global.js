@@ -13,6 +13,7 @@
       /*  Corecting text on the asset detail page */
       let symptomName = $('.asset-detail-page .symptom-name').text();
       let assetType = $('.asset-detail-page .asset-type').text();
+
       symptomName = symptomName.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {
         return txtVal.toUpperCase();
       });
@@ -58,6 +59,12 @@
         $(".view-s2d-asset-details.view-display-id-block_1 .views-field-field-series .field-content").remove();
       }else{
         $(".view-s2d-asset-details.view-display-id-block_1 .views-field-field-series .field-content").remove();
+      }
+
+      //Asset Detail Page: Hide "View all [Symptom name] assets" if there are less than 3 assets
+      let moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
+      if(moreAssetCount < 3){
+        $('.user-logged-in.path-group .more-link').remove();
       }
 
     }
