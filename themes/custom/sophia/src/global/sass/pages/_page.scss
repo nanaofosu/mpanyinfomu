@@ -119,8 +119,6 @@
         width: 250px;
         border-radius: 5px;
         padding: 1em;
-        min-height: 200px;
-        text-align: center;
         box-shadow: 1px 1px 3px 1px #e0e0e0;
         border: 1px solid $gray-lighter;
         margin: 1em;
@@ -132,6 +130,7 @@
 
           .classification {
             font-weight: 400;
+            font-size: 12px;
           }
 
           .icon {

@@ -221,8 +221,6 @@ select.facets-dropdown {
     width: 250px;
     border-radius: 5px;
     padding: 1em;
-    min-height: 200px;
-    text-align: center;
     box-shadow: 1px 1px 3px 1px #e0e0e0;
     border: 1px solid #eeeeee;
     margin: 1em; }
@@ -233,7 +231,8 @@ select.facets-dropdown {
     .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row .similar-assets .classification,
     .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .classification,
     .asset-detail-page #more-about-sympton .view-content .views-row .similar-assets .classification {
-      font-weight: 400; }
+      font-weight: 400;
+      font-size: 12px; }
     .asset-detail-page #block-views-block-s2d-asset-details-block-2 .view-content .views-row .similar-assets .icon,
     .asset-detail-page #block-views-block-s2d-asset-details-block-3 .view-content .views-row .similar-assets .icon,
     .asset-detail-page #more-about-sympton .view-content .views-row .similar-assets .icon {
