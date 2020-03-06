@@ -42,7 +42,7 @@
       });
 
       /*  Seting breadcrumb in asset detail page  */
-      $('.asset-detail-page #breadcrumb-link').text(symptomName);
+      $('.asset-detail-page #breadcrumb-link').text("Browse Topics: "+symptomName);
       $('.asset-detail-page #breadcrumb-link').attr('href', '/browse-symptoms?f[0]=symptom_association_group_title:'+symptomName.toLowerCase());
 
       /*  Setting more link value */
@@ -62,14 +62,35 @@
       }
 
       //Asset Detail Page: Hide "View all [Symptom name] assets" if there are less than 3 assets
-      let moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
-      if(moreAssetCount < 3){
-        $('.user-logged-in.path-group .more-link').remove();
-      }
+      let moduleID = $('.asset-detail-page #asset-id').data("module-id");
+      let similarAssets = $('.asset-detail-page .similar-assets.item').toArray();
+      $.each(similarAssets, function() {
+        if($(this).data("module-id") == moduleID ){
+          $(this).closest('.views-row').remove();
+          moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
+          if(moreAssetCount < 3){
+            $('.user-logged-in.path-group .more-link').remove();
+          }
+        }
+        else{
+          let moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
+          if(moreAssetCount < 3){
+            $('.user-logged-in.path-group .more-link').remove();
+          }
+        }
+      });
+
+      //Faceted Search: All Symptoms results has several blank rows before results appear below these rows (see screenshot)
+      let facetSearchAllSymtoms = $('.path-browse-symptoms .view-s2d-faceted-search .view-content .views-row div.views-field.views-field-module-name-1 span.field-content').toArray();
+      $.each(facetSearchAllSymtoms, function(index, el) {
+        if($(this).html() == ""){
+          $(this).closest('.views-row').remove();
+        }
+      });
 
     }
   };
 
-  $(".field--name-name input").attr('maxlength','120');
+  $(".nam input").attr('maxlength','120');
 
 })(jQuery, Drupal);
