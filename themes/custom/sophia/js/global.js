@@ -7,8 +7,8 @@
 
   'use strict';
 
-  Drupal.behaviors.sophia = {
-    attach: function(context, settings) {
+  // Drupal.behaviors.sophia = {
+  //   attach: function(context, settings) {
 
       /*  Corecting text on the asset detail page */
       let symptomName = $('.asset-detail-page .symptom-name').text();
@@ -88,8 +88,14 @@
         }
       });
 
-    }
-  };
+
+  //
+  //   }
+  // };
+  
+  //Student Portal: Home page: Put Diagnostic Reasoning topic first in page body
+  let diagnosticReasoning = $(".path-frontpage .view-s2d-dashboard strong:contains('Diagnostic Reasoning')");
+  diagnosticReasoning.closest('.views-row').prependTo( $( ".path-frontpage .view-s2d-dashboard .view-content" ) );
 
   $(".nam input").attr('maxlength','120');
 
