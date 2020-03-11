@@ -407,6 +407,20 @@ body.admin-learning-path .lateral-panel .info {
   min-width: 250px;
   border: 1px solid #e0e0e0; }
 
+.path-admin table.responsive-enabled {
+  width: 100%; }
+.path-admin .dropbutton-multiple .dropbutton .secondary-action {
+  background: #ffffff; }
+
+.js .dropbutton-widget .dropbutton {
+  background: #ffffff;
+  min-width: 150px;
+  padding: 0 .5em; }
+
+.dropbutton-multiple.open .dropbutton-widget {
+  border: 1px solid #8f3931;
+  background: #ffffff; }
+
 .user-logged-in.path-user .user-info {
   display: flex;
   background: unset; }
