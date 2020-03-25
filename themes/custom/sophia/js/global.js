@@ -67,7 +67,7 @@
       $.each(similarAssets, function() {
         if($(this).data("module-id") == moduleID ){
           $(this).closest('.views-row').remove();
-          moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
+          let moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
           if(moreAssetCount < 3){
             $('.user-logged-in.path-group .more-link').remove();
           }
