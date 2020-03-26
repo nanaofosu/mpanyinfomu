@@ -65,17 +65,21 @@
       let moduleID = $('.asset-detail-page #asset-id').data("module-id");
       let similarAssets = $('.asset-detail-page .similar-assets.item').toArray();
       $.each(similarAssets, function() {
+        //remove redundant asset
         if($(this).data("module-id") == moduleID ){
           $(this).closest('.views-row').remove();
-          let moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
+          let moreAssetCount = $('.view-display-id-more_about_symptom > div.view-content .views-row').length;
           if(moreAssetCount < 3){
             $('.user-logged-in.path-group .more-link').remove();
           }
         }
         else{
-          let moreAssetCount = $('.view-display-id-more_about_symptom > div:nth-child(1) > div').length;
+          let moreAssetCount = $('.view-display-id-more_about_symptom > div.view-content .views-row').length;
           if(moreAssetCount < 3){
             $('.user-logged-in.path-group .more-link').remove();
+          }
+          else if(moreAssetCount > 3){
+            $('.view-display-id-more_about_symptom > div.view-content .views-row:gt(2)').remove();
           }
         }
       });
