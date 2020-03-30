@@ -421,6 +421,9 @@ body.admin-learning-path .lateral-panel .info {
   border: 1px solid #8f3931;
   background: #ffffff; }
 
+#opigno-module-edit-form .field--name-name {
+  display: none; }
+
 .user-logged-in.path-user .user-info {
   display: flex;
   background: unset; }
