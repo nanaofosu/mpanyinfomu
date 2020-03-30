@@ -101,6 +101,10 @@
   let diagnosticReasoning = $(".path-frontpage #main-region .view-s2d-dashboard strong:contains('Diagnostic Reasoning')");
   diagnosticReasoning.closest('.views-row').prependTo( $( ".path-frontpage #main-region .view-s2d-dashboard .view-content" ) );
 
-  $(".nam input").attr('maxlength','120');
+  // $(".nam input").attr('maxlength','120');
+
+  $('#opigno-module-edit-form .field--name-field-asset-display-title input').on('change keyup paste', function() {
+    $('#opigno-module-edit-form .field--name-name input').val(this.value);
+  });
 
 })(jQuery, Drupal);
