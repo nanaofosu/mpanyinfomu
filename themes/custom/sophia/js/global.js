@@ -104,9 +104,6 @@
     $('#opigno-module-edit-form .field--name-name input').val(this.value);
   });
   
-  // remove redundant bar for book chapters
-  if(assetType.toLowerCase() == "book chapter"){
-    $('#block-views-block-s2d-asset-details-block-1').remove();
-  }
+
 
 })(jQuery, Drupal);
