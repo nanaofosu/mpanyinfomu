@@ -276,7 +276,7 @@ function sophia_form_opigno_module_edit_form_form_alter(&$form, \Drupal\Core\For
 }
 function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 
-  unset($form['module_media_image']);
+  // unset($form['module_media_image']);
   //removing evenrything badge
   unset($form['badge_active']);
   unset($form['badge_name']);

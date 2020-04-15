@@ -1,0 +1,16 @@
+{#kint(content)#}
+<div class="book-asset row mt-5">
+    <div class="col-sm-4">
+        {% set book_image = drupal_view('s2d_asset_details', 'book_image') %}
+        {{book_image}}
+    </div>
+    <div class="col-sm-8">
+        <div class="book-author mb-2">
+            <i class="fas fa-user-circle"></i> {{content['field_book_author'][0]['#context']['value']}}
+        </div>
+        <div class="border-bottom h2">Read the Chapter</div>
+        <div>
+            <a target="_blank" href="{{content['field_book_chapter_link'][0]['#url'].getUri()}}"><i class="fas fa-external-link-alt"></i> {{'View Book Chapter'}}</a>
+        </div>
+    </div>
+</div>
