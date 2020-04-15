@@ -250,6 +250,8 @@ select.facets-dropdown {
     padding: 0.5em; }
   .asset-detail-page .view-display-id-asset_series .view-content .views-row:nth-child(odd) .series-item {
     background-color: #e0e0e0; }
+.asset-detail-page .visible-book.chapter {
+  display: none; }
 
 .toolbar-menu-administration ul li {
   margin-bottom: 0; }
