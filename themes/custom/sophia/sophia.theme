@@ -306,7 +306,7 @@ function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStat
 // '#maxlength'
   // unset($form['backwards_navigation']);
 
-  kint($form['name']['widget']['0']['value']['#maxlength']);
+  // kint($form['name']['widget']['0']['value']['#maxlength']);
 }
 function sophia_form_group_learning_path_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
   unset($form['field_certificate']);
