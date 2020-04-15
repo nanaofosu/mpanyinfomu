@@ -7,9 +7,6 @@
 
   'use strict';
 
-  // Drupal.behaviors.sophia = {
-  //   attach: function(context, settings) {
-
       /*  Corecting text on the asset detail page */
       let symptomName = $('.asset-detail-page .symptom-name').text();
       let assetType = $('.asset-detail-page .asset-type').text();
@@ -92,19 +89,21 @@
         }
       });
 
-
-  //
-  //   }
-  // };
-
   //Student Portal: Home page: Put Diagnostic Reasoning topic first in page body
   let diagnosticReasoning = $(".path-frontpage #main-region .view-s2d-dashboard strong:contains('Diagnostic Reasoning')");
   diagnosticReasoning.closest('.views-row').prependTo( $( ".path-frontpage #main-region .view-s2d-dashboard .view-content" ) );
+
+  //Put Diagnostic Reasoning as first dropdown menu item under Browse Topics
+  let diagnosticReasoningInMenu = $("nav .dropdown .dropdown-menu .view-s2d-dashboard  .view-content a:contains('Diagnostic Reasoning')");
+  diagnosticReasoningInMenu.closest('.views-row').prependTo( $( "nav .dropdown .dropdown-menu .view-s2d-dashboard .view-content") );
+
 
   // $(".nam input").attr('maxlength','120');
 
   $('#opigno-module-edit-form .field--name-field-asset-display-title input').on('change keyup paste', function() {
     $('#opigno-module-edit-form .field--name-name input').val(this.value);
   });
+
+  // $(".view-s2d-faceted-search")
 
 })(jQuery, Drupal);

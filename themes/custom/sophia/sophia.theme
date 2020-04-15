@@ -29,6 +29,7 @@ function sophia_preprocess_html(&$variables) {
   ];
   $variables['page']['#attached']['html_head'][] = [$http_equiv, 'http-equiv'];
 
+
 }
 
 function sophia_page_attachments_alter(&$page) {
@@ -270,6 +271,9 @@ function sophia_theme_suggestions_form_alter(array &$suggestions, array $variabl
 //
 // }
 
+function sophia_form_opigno_module_edit_form_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+  // kint($form);
+}
 function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 
   unset($form['module_media_image']);
@@ -298,9 +302,11 @@ function sophia_form_opigno_module_form_alter(&$form, \Drupal\Core\Form\FormStat
   unset($form['keep_results']); //Store results
   unset($form['show_attempt_stats']); //Display the allowed number of attempts on the starting page for this Module
 
+  $form['name']['widget']['0']['value']['#maxlength'] = 120;
+// '#maxlength'
   // unset($form['backwards_navigation']);
 
-  // kint($form);
+  kint($form['name']['widget']['0']['value']['#maxlength']);
 }
 function sophia_form_group_learning_path_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
   unset($form['field_certificate']);
