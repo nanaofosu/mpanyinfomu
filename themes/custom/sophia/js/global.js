@@ -103,7 +103,10 @@
   $('#opigno-module-edit-form .field--name-field-asset-display-title input').on('change keyup paste', function() {
     $('#opigno-module-edit-form .field--name-name input').val(this.value);
   });
-
-  // $(".view-s2d-faceted-search")
+  
+  // remove redundant bar for book chapters
+  if(assetType.toLowerCase() == "book chapter"){
+    $('#block-views-block-s2d-asset-details-block-1').remove();
+  }
 
 })(jQuery, Drupal);
