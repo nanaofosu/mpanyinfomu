@@ -6,12 +6,16 @@
     </div>
     <div class="col-sm-8">
         <div class="book-author mb-2">
-            <i class="fas fa-user-circle fa-lg"></i>{{content['field_book_author'][0]['#context']['value']}}
-            
+            <i class="fas fa-user-circle fa-lg"> </i><span class="ml-2">{{content['field_book_author'][0]['#context']['value']}}</span>
+            <p>From Symptom to Diagnosis: An Evidence-Based Guide, 4e by Scott D.C. Stern, Adam Cifu, and Diane Altkorn.</p>
         </div>
         <div class="border-bottom h2">Read the Chapter</div>
         <div>
-            <a target="_blank" href="{{content['field_book_chapter_link'][0]['#url'].getUri()}}"><i class="fas fa-external-link-alt"></i> {{'View Book Chapter'}}</a>
+            <a target="_blank" href="{{content['field_book_chapter_link'][0]['#url'].getUri()}}"><i class="fas fa-external-link-alt"></i> <span class="ml-1">{{'View Book Chapter'}}</span></a>
+        </div>
+        <p>Link opens in a new tab in accessmedicine.com. Your ability to access the full chapter depends on whether your institution has a subscription to AccessMedicine.com.</p>
+        <div>
+            <a href="https://www.amazon.com/Symptom-Diagnosis-Evidence-Based-Fourth/dp/1260121119"><i class="fas fa-book fa-lg"></i> <span class="ml-2">Buy Book on Amazon</span></a>
         </div>
     </div>
 </div>

@@ -169,9 +169,12 @@
       }
     }
   }
-  .visible-book{
-    &.chapter{
-      display: none;
+  .detail-wrapper{
+    width: 100%;
+    &.book{
+      &.chapter{
+        display: none;
+      }
     }
   }
 }
