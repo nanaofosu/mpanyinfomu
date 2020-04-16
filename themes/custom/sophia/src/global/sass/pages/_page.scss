@@ -169,12 +169,17 @@
       }
     }
   }
+  .visible-book{
+    &.chapter{
+      display: none;
+    }
+  }
 }
 
 .toolbar-menu-administration {
   ul {
     li {
-      margin-bottom: 0;
+      margin-bottom: 0; 
     }
   }
 }
