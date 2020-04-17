@@ -255,3 +255,10 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
     text-decoration: none;
     border-bottom: 1px solid #e6e6e6;
 }
+
+.btn-link{
+  color: $primary;
+  &:hover{
+    color: $primary;
+  }
+}
