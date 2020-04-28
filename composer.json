@@ -22,7 +22,11 @@
         "drupal/twig_tweak": "^2.4",
         "drupal/rules": "^3.0",
         "drupal/front": "^1.0",
-        "drupal/admin_toolbar": "^2.0"
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/gdoc_field": "^1.1",
+        "drupal/linkit": "^4.3",
+        "drupal/editor_advanced_link": "^1.6",
+        "drupal/editor_file": "^1.4"
     },
     "replace": {
         "drupal/core": "^8.7"

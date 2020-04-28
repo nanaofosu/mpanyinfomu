@@ -1,5 +1,10 @@
 #main-region {
   margin-top: 30px;
+  .node{
+    a{
+      border-bottom: 1px dotted $primary;
+    }
+  }
 }
 
 .user-login-link {
@@ -261,4 +266,9 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
   &:hover{
     color: $primary;
   }
+}
+.form-managed-file{
+  border: 1px solid $gray-lighter;
+    border-radius: 0px;
+    padding: .1em .2em;
 }

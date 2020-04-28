@@ -134,6 +134,8 @@ select.facets-dropdown {
 /*This file is for gathering all partials into one file*/
 #main-region {
   margin-top: 30px; }
+  #main-region .node a {
+    border-bottom: 1px dotted #8f3931; }
 
 .user-login-link {
   color: #ffffff; }
@@ -308,6 +310,11 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
   color: #8f3931; }
   .btn-link:hover {
     color: #8f3931; }
+
+.form-managed-file {
+  border: 1px solid #eeeeee;
+  border-radius: 0px;
+  padding: .1em .2em; }
 
 .step-list-top {
   margin-top: 5px; }
