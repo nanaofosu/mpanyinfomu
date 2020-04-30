@@ -29,15 +29,6 @@
         }
       });
 
-      //get the quick edit field type
-      $("div").each(function(index) {
-        if (!$(this).attr('class')) { //check that this is a div with no class name
-          if (Date.parse($(this).html())) { //check that the value of the html can be parsed as a date.
-            $(this).remove();
-          }
-        }
-      });
-
       /*  Seting breadcrumb in asset detail page  */
       $('.asset-detail-page #breadcrumb-link').text("Browse Topics: "+symptomName);
       $('.asset-detail-page #breadcrumb-link').attr('href', '/browse-symptoms?f[0]=symptom_association_group_title:'+symptomName.toLowerCase());
