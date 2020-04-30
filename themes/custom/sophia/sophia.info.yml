@@ -1,7 +1,7 @@
 name: Sophia
 type: theme
 description: 'Basic structure for Sophia Theme.'
-project: 'Philo-Sophia'
+project: 'Sophia'
 base theme: false
 libraries:
   - sophia/bootstrap_4
@@ -26,12 +26,14 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   copyright: 'Copyright'
+  breadcrumb: Breadcrumb
 disabled:
+  webmaster_nav: 'Web Master Nav'
+  series: 'Asset series'
   ribbon: 'University of Chicago Ribbon'
   header_form: "Header Form"
   help: 'Help'
   secondary_menu: 'Secondary menu'
-  breadcrumb: Breadcrumb
   featured_bottom_second: 'Featured bottom second'
   featured_bottom_third: 'Featured bottom third'
   footer: 'Footer Wrapper'

@@ -5,6 +5,13 @@ global:
       css/style.css: {}
   js:
     js/global.js: {}
+    
+  dependencies:
+    - core/jquery
+
+page_header:
+  js:
+    js/page-header.js: {}
 
 uchicago_styling:
   version: VERSION

@@ -316,6 +316,11 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
   border-radius: 0px;
   padding: .1em .2em; }
 
+.path-browse-symptoms #block-breadcrumbs h3 {
+  display: none; }
+.path-browse-symptoms #block-breadcrumbs nav {
+  display: none; }
+
 .step-list-top {
   margin-top: 5px; }
   .step-list-top li .number {
