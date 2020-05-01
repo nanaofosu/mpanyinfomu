@@ -11,7 +11,7 @@
 #}
 {% for item in breadcrumb %}
   {% if 'Symptom Association'  in item.text %}
-    <span style="display: none;" id="symptom-association-topic">{{item.text | replace({'Symptom Association » Group » Title: ': ''}) |title }}</span>
+    <span  id="symptom-association-topic">{{item.text | replace({'Symptom Association » Group » Title: ': ''}) |title }}</span>
   {% endif %}
 {% endfor %}
 
