@@ -85,8 +85,8 @@
   diagnosticReasoning.closest('.views-row').prependTo( $( ".path-frontpage #main-region .view-s2d-dashboard .view-content" ) );
 
   //Put Diagnostic Reasoning as first dropdown menu item under Browse Topics
-  let diagnosticReasoningInMenu = $("nav .dropdown .dropdown-menu .view-s2d-dashboard  .view-content a:contains('Diagnostic Reasoning')");
-  diagnosticReasoningInMenu.closest('.views-row').prependTo( $( "nav .dropdown .dropdown-menu .view-s2d-dashboard .view-content") );
+  let diagnosticReasoningInMenu = $(".portal-header .view-s2d-dashboard  .view-content a:contains('Diagnostic Reasoning')");
+  diagnosticReasoningInMenu.closest('.views-row').prependTo( $( ".portal-header .view-s2d-dashboard .view-content") );
 
 
   // $(".nam input").attr('maxlength','120');
