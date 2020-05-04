@@ -321,6 +321,9 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
 .path-browse-symptoms #block-breadcrumbs nav {
   display: none; }
 
+.node .layout.layout--twocol-section.layout--twocol-section--75-25 .layout__region--second img {
+  max-width: 100%; }
+
 .step-list-top {
   margin-top: 5px; }
   .step-list-top li .number {
