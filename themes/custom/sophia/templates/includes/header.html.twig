@@ -4,26 +4,18 @@
       <a class="" href="https://www.uchicago.edu/" id="uchicago">The University of Chicago</a>
       <!-- <ul class="nav navbar-nav navbar-right"> <li id="s"> <a href="/search/" id="search-trigger" class="ss-icon">Search</a> </li> </ul> -->
 
-      <!-- Start Browse button -->
-      <div class="dropdown show">
-        <a class="btn dropdown-toggle" href="#" role="button" id="browseSymptomDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Browse Topics
-        </a>
-        <div class="dropdown-menu" aria-labelledby="browseSymptomDropdownMenuLink">
-          {{ drupal_view('s2d_dashboard', 'block_1') }}
-        </div>
-      </div>
-      <!-- End Browse button -->
-
       <a class="user-login-link" href="/user">Log in</a>
-      <span class="user-account-span">
-        <a href="/user" class="d-flex">
-          <span class="">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="d-none d-md-block ml-3">My account</span>
-        </a>
-      </span>
+      {% if logged_in %}
+        <span class="user-account-span">
+          <a href="/user" class="d-flex">
+            <span class="">
+              <i class="fas  fa-sign-out-alt"></i>
+            </span>
+            <span class="d-none d-md-block ml-3">Log out</span>
+          </a>
+        </span>
+      {% endif %}
+
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -41,9 +33,39 @@
       </div>
     </div>
   </form>
-  <div class="wordmark" role="navigation">
-    <div class="logo">
-      <a href="/">Symptpom to Diagnosis</a>
+
+  <div class="container">
+    <div class="wordmark" role="navigation">
+      {% if logged_in %}
+        <div class="d-flex justify-content-between">
+            {#Uchicago Wordmark#}
+            <div class="portal-logo">
+              <a href="/">Symptpom to Diagnosis</a>
+            </div>
+            {# Home Icon#}
+            <div>
+              <a href="/"><i class="fas fa-home fa-2x"></i></a>
+            </div>
+            {# Topics dropdown#}
+            <div class="dropdown show">
+              <a class="btn dropdown-toggle" href="#" role="button" id="browseSymptomDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Browse Topics
+              </a>
+              <div class="dropdown-menu" aria-labelledby="browseSymptomDropdownMenuLink">
+                {{ drupal_view('s2d_dashboard', 'block_1') }}
+              </div>
+            </div>
+            {# Custom links#}
+            <div>
+              <a href="/resources">Resources</a>
+            </div>
+        </div>
+      {% else %}
+      <div class="logo">
+        <a href="/">Symptpom to Diagnosis</a>
+      </div>
+      {% endif %}
+
     </div>
   </div>
   {{ page.primary_menu }}
