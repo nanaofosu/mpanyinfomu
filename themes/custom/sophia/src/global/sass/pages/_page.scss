@@ -297,3 +297,17 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
     }
   }
 }
+
+.view-id-s2d_dashboard{
+  .view-content{
+    display: flex;
+    flex-direction: column;
+    > div{
+      order: 2;
+      &.diagnostic-reasoning{
+        order: 1
+      }
+    }
+
+  }
+}

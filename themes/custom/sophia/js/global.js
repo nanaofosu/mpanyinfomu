@@ -81,12 +81,12 @@
       });
 
   //Student Portal: Home page: Put Diagnostic Reasoning topic first in page body
-  let diagnosticReasoning = $(".path-frontpage #main-region .view-s2d-dashboard strong:contains('Diagnostic Reasoning')");
-  diagnosticReasoning.closest('.views-row').prependTo( $( ".path-frontpage #main-region .view-s2d-dashboard .view-content" ) );
+  // let diagnosticReasoning = $(".path-frontpage #main-region .view-s2d-dashboard strong:contains('Diagnostic Reasoning')");
+  // diagnosticReasoning.closest('.views-row').prependTo( $( ".path-frontpage #main-region .view-s2d-dashboard .view-content" ) );
 
   //Put Diagnostic Reasoning as first dropdown menu item under Browse Topics
-  let diagnosticReasoningInMenu = $(".portal-header .view-s2d-dashboard  .view-content a:contains('Diagnostic Reasoning')");
-  diagnosticReasoningInMenu.closest('.views-row').prependTo( $( ".portal-header .view-s2d-dashboard .view-content") );
+  // let diagnosticReasoningInMenu = $(".portal-header .view-s2d-dashboard  .view-content a:contains('Diagnostic Reasoning')");
+  // diagnosticReasoningInMenu.closest('.views-row').prependTo( $( ".portal-header .view-s2d-dashboard .view-content") );
 
 
   // $(".nam input").attr('maxlength','120');
@@ -95,6 +95,6 @@
     $('#opigno-module-edit-form .field--name-name input').val(this.value);
   });
   
-
+  
 
 })(jQuery, Drupal);

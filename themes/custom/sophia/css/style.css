@@ -324,6 +324,14 @@ footer a:not(.soc):not(.uchicago-wordmark):not(.marcus-foundation-wordmark):focu
 .node .layout.layout--twocol-section.layout--twocol-section--75-25 .layout__region--second img {
   max-width: 100%; }
 
+.view-id-s2d_dashboard .view-content {
+  display: flex;
+  flex-direction: column; }
+  .view-id-s2d_dashboard .view-content > div {
+    order: 2; }
+    .view-id-s2d_dashboard .view-content > div.diagnostic-reasoning {
+      order: 1; }
+
 .step-list-top {
   margin-top: 5px; }
   .step-list-top li .number {
@@ -484,15 +492,15 @@ body.admin-learning-path .lateral-panel .info {
   .user-logged-in .trainings-list tbody tr.training-active td {
     padding-left: 4em; }
 
-.wordmark {
+header .wordmark {
   padding: 20px 0;
   background: white;
   border-bottom: 1px solid #e0e0e0; }
-  .wordmark .logo {
+  header .wordmark .logo {
     margin: 0 auto;
     width: 75%;
     max-width: 370px; }
-    .wordmark .logo a {
+    header .wordmark .logo a {
       display: block;
       text-indent: -9999em;
       width: 100%;
@@ -501,10 +509,10 @@ body.admin-learning-path .lateral-panel .info {
       margin: 0 auto;
       background: transparent url("../UChicago_Sig_SymptomToDiagnosis_CMYK_Horizontal_Maroon.svg") 0 0 no-repeat;
       background-size: 100% 100%; }
-    .wordmark .logo img {
+    header .wordmark .logo img {
       display: none;
       visibility: hidden; }
-  .wordmark .portal-logo a {
+  header .wordmark .portal-logo a {
     display: block;
     text-indent: -9999em;
     width: 300px;
@@ -513,29 +521,29 @@ body.admin-learning-path .lateral-panel .info {
     margin: 0 auto;
     background: transparent url(../UChicago_Sig_SymptomToDiagnosis_CMYK_Horizontal_Maroon.svg) 0 0 no-repeat;
     background-size: contain; }
-
 @media (min-width: 768px) {
-  .wordmark {
+  header .wordmark {
     padding: 30px 0; } }
 @media (min-width: 992px) {
-  .wordmark {
+  header .wordmark {
     border-bottom: none; } }
 @media (min-width: 1200px) {
-  .wordmark {
+  header .wordmark {
     padding: 40px 0; } }
 @media (min-width: 1460px) {
-  .wordmark {
+  header .wordmark {
     padding: 60px 0; } }
 @media (min-width: 1200px) {
-  .wordmark .logo {
+  header .wordmark .logo {
     width: 80%; } }
 @media (min-width: 1460px) {
-  .wordmark .logo {
+  header .wordmark .logo {
     max-width: 470px; } }
 @media (min-width: 992px) and (max-height: 850px) {
-  .wordmark .logo {
+  header .wordmark .logo {
     width: 30%;
     max-width: 370px; } }
+
 .kint {
   font-size: 13px;
   margin: 8px 0;
