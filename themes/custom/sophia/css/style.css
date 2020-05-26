@@ -518,9 +518,11 @@ header .wordmark {
     width: 300px;
     height: auto;
     padding-bottom: 13.753384073%;
-    margin: 0 auto;
+    margin: 6px auto 0 auto;
     background: transparent url(../UChicago_Sig_SymptomToDiagnosis_CMYK_Horizontal_Maroon.svg) 0 0 no-repeat;
     background-size: contain; }
+  header .wordmark .portal-home-icon {
+    padding-top: 6px; }
 @media (min-width: 768px) {
   header .wordmark {
     padding: 30px 0; } }
