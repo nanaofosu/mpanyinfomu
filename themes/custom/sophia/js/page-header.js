@@ -5,7 +5,7 @@
 		let pageTitleUnchanged = $('.path-browse-symptoms .page-title');
         let selectedFacet = $("#symptom-association-topic").text()
         if(selectedFacet.length > 0){
-            pageTitleUnchanged.text("Results for "+selectedFacet);
+            pageTitleUnchanged.html("Results for <strong>"+selectedFacet+" </strong>");
         }
         else{
             pageTitleUnchanged.text("Results for All Topics");
