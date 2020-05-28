@@ -1,0 +1,7 @@
+{# {{kint(content['field_panopto_link']['#items'])}} #}
+<div class="iframe-asset row mt-5 mb-5">
+   {# {{content['field_panopto_link']}}
+   {{ content.field_panopto_link[0]['#url']}} #}
+   <iframe src="{{ content.field_asset_link[0]['#url']}}"
+   scrolling="no" frameborder="0" class="h5p-iframe-content h5p-iframe-wrapper" style="width: 1106px; height: 691.25px; display: block;" ></iframe>
+</div>
