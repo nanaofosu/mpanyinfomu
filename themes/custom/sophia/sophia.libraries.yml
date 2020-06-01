@@ -2,8 +2,8 @@ global:
   version: VERSION
   css:
     theme:
-      css/style.css: {}
       css/bootstrap.min.css: {}
+      css/style.css: {}   
   js:
     js/global.js: {}
     https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js: { type: external, attributes: {defer: true, integrity: sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6, crossorigin: anonymous} }
