@@ -6,7 +6,7 @@ global:
       css/style.css: {}   
   js:
     js/global.js: {}
-    https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js: { type: external, attributes: {defer: true, integrity: sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6, crossorigin: anonymous} }
+    
     
   dependencies:
     - core/jquery
@@ -28,7 +28,7 @@ uchicago_styling:
     - core/jquery
 bootstrap_4:
   js:
-    https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js: { type: external, attributes: {defer: true, integrity: sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6, crossorigin: anonymous} }
-    https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js: { type: external, attributes: {integrity: sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo, crossorigin: anonymous}}
+    js/bootstrap.min.js: {}
+    js/popper.min.js: {}
   dependencies:
     - core/jquery
