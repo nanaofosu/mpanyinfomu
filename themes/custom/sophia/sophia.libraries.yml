@@ -25,7 +25,7 @@ uchicago_styling:
     - core/jquery
 bootstrap_4:
   css:
-    theme:
+    component:
       css/bootstrap.min.css: {}
   js:
     js/popper.min.js: {}
