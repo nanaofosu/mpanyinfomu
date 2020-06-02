@@ -342,3 +342,4 @@ function sophia_theme_suggestions_input_alter(array &$suggestions, array $variab
 function sophia_preprocess_input(&$variables) {
 
 }
+
