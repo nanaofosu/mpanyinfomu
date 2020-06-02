@@ -546,6 +546,9 @@ header .wordmark {
     width: 30%;
     max-width: 370px; } }
 
+.collapse.show {
+  display: block; }
+
 .kint {
   font-size: 13px;
   margin: 8px 0;
