@@ -10,12 +10,12 @@ import { Entity } from '../entity/entity';
 declare var jQuery: any;
 
 @Component({
-  selector: 'entity-update',
-  templateUrl: './update.component.html',
-  styleUrls: ['./update.component.scss']
+  selector: 'meetings-list',
+  templateUrl: './meetings.component.html',
+  styleUrls: ['./meetings.component.scss']
 })
 
-export class UpdateComponent implements OnInit {
+export class MeetingsListComponent implements OnInit {
   @Input('selectedEntity') selectedEntity: Entity;
   @Input('groupId') groupId: number;
   @Input('apiBaseUrl') apiBaseUrl: number;
@@ -25,7 +25,11 @@ export class UpdateComponent implements OnInit {
   entityForm: any;
   mainId: any;
   getEntityFormUrl: string;
-  text_property_of: string;
+  text_score: string;
+  form = {
+    bundle: null,
+    existingEntity: null,
+  };
 
   constructor(
     private http: HttpClient,
@@ -34,7 +38,7 @@ export class UpdateComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.getEntityFormUrl = window['appConfig'].getEntityFormUrl;
-    this.text_property_of = window['appConfig'].text_property_of;
+    this.text_score = window['appConfig'].text_score;
   }
 
   ngOnInit(): void {
@@ -42,7 +46,20 @@ export class UpdateComponent implements OnInit {
       this.mainId = !isNaN(+params['id']) ? +params['id'] : '';
     });
 
-    this.entityForm = this.sanitizer.bypassSecurityTrustResourceUrl(this.apiBaseUrl + this.appService.replaceUrlParams(this.getEntityFormUrl, { '%groupId': this.groupId, '%bundle': this.selectedEntity.contentType, '%entityId': this.selectedEntity.entityId }));
+    let contentType = this.selectedEntity.contentType;
+    let url = '';
+    // Set path to score ILT.
+    if (contentType == 'ContentTypeILT') {
+      url = '/ilt/%meeting/score';
+    }
+    // Or set path to score Live Meeting.
+    if (contentType == 'ContentTypeMeeting') {
+      url = '/moxtra/meeting/%meeting/score';
+    }
+
+    const entityFormUrl = url;
+
+    this.entityForm = this.sanitizer.bypassSecurityTrustResourceUrl(this.apiBaseUrl + this.appService.replaceUrlParams(entityFormUrl, { '%meeting': this.selectedEntity.entityId}));
     this.listenFormCallback();
   }
 

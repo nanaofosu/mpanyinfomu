@@ -35,10 +35,21 @@ final class OpignoGroupContext {
   public static function getCurrentGroupId() {
     static::ensureSession();
 
+    $route_match = \Drupal::routeMatch();
+    $route_id = FALSE;
+    if ($group = $route_match->getParameter('group')) {
+      $route_id = $group->id();
+    }
+
     /* @var \Drupal\Core\TempStore\PrivateTempStore $store */
     $store = \Drupal::service('user.private_tempstore')
       ->get('opigno_group_manager');
-    return $store->get(self::GROUP_ID);
+    $stored_id =  $store->get(self::GROUP_ID);
+    if ($route_id && $route_id != $stored_id) {
+      self::setGroupId($route_id);
+      return $route_id;
+    }
+    return $stored_id;
   }
 
   /**

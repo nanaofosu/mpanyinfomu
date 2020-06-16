@@ -37,6 +37,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
   updateEntityPanel = false;
   deleteEntityPanel = false;
   addEntityPanel = false;
+  addEntityMeeting = false;
   manageEntityPanel = false;
   updateLinkPanel = false;
   selectedLink: any;
@@ -61,6 +62,14 @@ export class LevelComponent implements OnInit, AfterViewInit {
     rows: globals.minRow
   };
   userHasInfoCard: boolean;
+  bt_add_a_link: string;
+  text_add_your_first_item: string;
+  text_guided_navigation: string;
+  text_free_navigation: string;
+  text_if_entity_dropped_under_children: string;
+  text_cannot_drop_over_or_at_the_same_level: string;
+  text_click_now_on_the_two_steps_of_your_training: string;
+  text_status_message: string;
 
   constructor(
     public appService: AppService,
@@ -76,9 +85,18 @@ export class LevelComponent implements OnInit, AfterViewInit {
     this.viewType = window['appConfig'].viewType;
     this.apiBaseUrl = (typeof window['appConfig'].apiBaseUrl !== 'undefined') ? window['appConfig'].apiBaseUrl : '';
     this.userHasInfoCard = window['appConfig'].userHasInfoCard;
+    this.bt_add_a_link = window['appConfig'].bt_add_a_link;
+    this.text_add_your_first_item = window['appConfig'].text_add_your_first_item;
+    this.text_guided_navigation = window['appConfig'].text_guided_navigation;
+    this.text_free_navigation = window['appConfig'].text_free_navigation;
+    this.text_if_entity_dropped_under_children  = window['appConfig'].text_if_entity_dropped_under_children;
+    this.text_cannot_drop_over_or_at_the_same_level = window['appConfig'].text_cannot_drop_over_or_at_the_same_level;
+    this.text_click_now_on_the_two_steps_of_your_training = window['appConfig'].text_click_now_on_the_two_steps_of_your_training;
+    this.text_status_message = window['appConfig'].text_status_message;
     this.updateGuidedNavigationUrl = window['appConfig'].updateGuidedNavigationUrl;
     this.groupType = (typeof window['appConfig'].groupType !== 'undefined') ? window['appConfig'].groupType : '';
-
+    // Update links if module was added/deleted.
+    appService.needUpdate$.subscribe((response) => {this.ngOnInit(); });
     try {
       dragulaService.setOptions('nested-bag', {
         revertOnSpill: true,
@@ -87,6 +105,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
 
     dragulaService.drag.subscribe((value: any) => {
       this.dragging = true;
+      this.appService.updateLinks(!this.appService.linksStatus);
     });
 
     dragulaService.drop.subscribe((value: any) => {
@@ -184,7 +203,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
         result = this.entitiesPositions[index];
       }
       first = false;
-    })
+    });
 
     return result;
   }
@@ -204,13 +223,13 @@ export class LevelComponent implements OnInit, AfterViewInit {
 
     /** If entity dropped over or at the same parent level: cancel movement */
     if (!entity2 && entity1.parents.length && drop.row <= this.entityService.parentsMaxRow(entity1, this.entities, this.entitiesPositions)) {
-      this.setFlashMessage('Cannot drop over or at the same level as parent');
+      this.setFlashMessage(this.text_cannot_drop_over_or_at_the_same_level);
       return;
     }
 
     /** If entity dropped under children */
     if (!entity2 && drop.row >= this.entityService.childrenMinRow(entity1, this.entities, this.entitiesPositions)) {
-      this.setFlashMessage('Cannot drop under or at the same level as children, move children before');
+      this.setFlashMessage(this.text_if_entity_dropped_under_children);
       return;
     }
 
@@ -253,7 +272,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
     let json = {
       groupId: this.groupId,
       mainItemPositions: this.entitiesPositions
-    }
+    };
 
     this.http
       .post(this.apiBaseUrl + this.appService.replaceUrlParams(this.setEntitiesPositionsUrl, { '%groupId': this.groupId }), JSON.stringify(json))
@@ -363,7 +382,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
     // Update database
     let json = {
       entities: that.entities
-    }
+    };
 
     that.http
       .post(that.apiBaseUrl + that.appService.replaceUrlParams(that.updateEntitiesUrl, { '%groupId': that.groupId }), JSON.stringify(json))
@@ -383,7 +402,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
       this.addLinkIsRunning = (this.addLinkIsRunning) ? false : true;
 
       if (this.addLinkIsRunning) {
-        this.showMessage('Click now on the two steps of your training to be linked in order to create the link.');
+        this.showMessage(this.text_click_now_on_the_two_steps_of_your_training);
       }
     }
   }
@@ -407,7 +426,7 @@ export class LevelComponent implements OnInit, AfterViewInit {
   }
 
   getGuidedNavigationText() {
-    return this.guidedNavigationIsOn ? 'Guided navigation' : 'Free navigation';
+    return this.guidedNavigationIsOn ? this.text_guided_navigation : this.text_free_navigation;
   }
 
   showGuidedNavigationButton() {
@@ -444,7 +463,7 @@ ${message}
     element.classList.add('alert');
     element.classList.add('alert-success');
     element.setAttribute('role', 'alert');
-    element.setAttribute('aria-label', 'Status message');
+    element.setAttribute('aria-label', this.text_status_message);
     element.setAttribute('data-id', 'add-link');
     element.innerHTML = content;
     wrapper.appendChild(element);
@@ -536,6 +555,7 @@ ${message}
   closePanels(): void {
     this.addEntityPanel = false;
     this.updateEntityPanel = false;
+    this.addEntityMeeting = false;
     this.deleteEntityPanel = false;
     this.manageEntityPanel = false;
     this.updateLinkPanel = false;
@@ -551,6 +571,11 @@ ${message}
   openAddPanel(entity: Entity): void {
     this.selectedEntity = entity;
     this.addEntityPanel = true;
+  }
+
+  openMeetingsPanel(entity: Entity): void {
+    this.selectedEntity = entity;
+    this.addEntityMeeting = true;
   }
 
   openManagePanel(entity: Entity): void {
