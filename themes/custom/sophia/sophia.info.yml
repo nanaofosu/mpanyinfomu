@@ -7,6 +7,7 @@ libraries:
   - sophia/bootstrap_4
   - sophia/uchicago_styling
   - sophia/global
+  - sophia/icons
 libraries-override:
   system/base:
     css:

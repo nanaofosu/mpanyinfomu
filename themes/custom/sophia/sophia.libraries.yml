@@ -34,3 +34,14 @@ bootstrap_4:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+icons:
+  css:
+    theme:
+      icons/css/animation.css: {}
+      icons/css/fontello-codes.css: {}
+      icons/css/fontello-embedded.css: {}
+      icons/css/fontello-ie7-codes.css: {}
+      icons/css/fontello-ie7.css: {}
+      icons/css/fontello.css: {}
+      
