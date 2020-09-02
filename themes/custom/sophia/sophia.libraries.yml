@@ -16,7 +16,7 @@ uchicago_styling:
   version: VERSION
   css:
     component:
-      https://cloud.typography.com/6526092/7294572/css/fonts.css: { type: external }
+      https://d3qi0qp55mx5f5.cloudfront.net/shared-resources/fonts/768728/982E8327763C758A5.css: { type: external }
       src/vita/sass/main.css: {}
   js:
     js/base.js: {}
